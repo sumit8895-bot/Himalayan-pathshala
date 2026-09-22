@@ -1,723 +1,487 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Himalayan PathShala | Learn • Prepare • Succeed</title>
-
-  <meta name="description" content="Himalayan PathShala - Study resources, current affairs, educational content and preparation resources.">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f9fc;
-      color: #172033;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    /* NAVIGATION */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(8, 27, 55, 0.97);
-      box-shadow: 0 2px 15px rgba(0,0,0,0.15);
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      min-height: 70px;
-      padding: 12px 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      color: white;
-      font-size: 20px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-    }
-
-    .nav-links a {
-      color: white;
-      font-size: 14px;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #ffd166;
-    }
-
-    .telegram-btn {
-      background: #229ed9;
-      color: white !important;
-      padding: 10px 16px;
-      border-radius: 25px;
-    }
-
-    .telegram-btn:hover {
-      background: #168ac0;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 100px 20px;
-      position: relative;
-      background:
-        linear-gradient(rgba(5, 25, 55, 0.58), rgba(5, 25, 55, 0.78)),
-        url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2000&q=85")
-        center/cover no-repeat;
-    }
-
-    .hero-content {
-      max-width: 900px;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 78px);
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-      font-weight: 900;
-    }
-
-    .hero h2 {
-      font-size: clamp(22px, 3vw, 36px);
-      color: #ffd166;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 19px;
-      max-width: 750px;
-      margin: auto auto 35px;
-      color: #f2f5fa;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 25px;
-      border-radius: 30px;
-      font-weight: 700;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: #ffd166;
-      color: #172033;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      background: #ffbf3f;
-    }
-
-    .btn-youtube {
-      background: #ff0000;
-      color: white;
-    }
-
-    .btn-youtube:hover {
-      transform: translateY(-3px);
-      background: #d90000;
-    }
-
-    /* GENERAL */
-    section {
-      padding: 85px 20px;
-    }
-
-    .container {
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 38px;
-      color: #0b2a52;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      max-width: 700px;
-      margin: auto;
-      color: #657084;
-    }
-
-    /* ABOUT */
-    .about {
-      background: white;
-    }
-
-    .about-text {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      font-size: 18px;
-      color: #596579;
-    }
-
-    .features {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    /* CARDS */
-    .card {
-      background: white;
-      border-radius: 18px;
-      padding: 30px;
-      box-shadow: 0 8px 30px rgba(15, 35, 70, 0.08);
-      border: 1px solid #e7ebf2;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 15px 35px rgba(15, 35, 70, 0.14);
-    }
-
-    .card-icon {
-      font-size: 38px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      color: #0b2a52;
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
-
-    .card p {
-      color: #687386;
-      margin-bottom: 20px;
-    }
-
-    .small-btn {
-      display: inline-block;
-      padding: 9px 17px;
-      border-radius: 20px;
-      background: #0b2a52;
-      color: white;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .small-btn:hover {
-      background: #17487f;
-    }
-
-    /* STUDY */
-    .study {
-      background: #f3f6fb;
-    }
-
-    .study-grid,
-    .current-grid,
-    .social-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-    }
-
-    /* CURRENT AFFAIRS */
-    .current {
-      background: #eaf0f8;
-    }
-
-    .current .card {
-      background: #ffffff;
-    }
-
-    /* YOUTUBE */
-    .youtube {
-      background: linear-gradient(135deg, #081b37, #123b68);
-      color: white;
-      text-align: center;
-    }
-
-    .youtube h2 {
-      color: white;
-    }
-
-    .youtube p {
-      color: #dce6f2;
-      max-width: 700px;
-      margin: auto auto 30px;
-      font-size: 18px;
-    }
-
-    /* SOCIAL */
-    .social {
-      background: white;
-    }
-
-    .social-card {
-      text-align: center;
-    }
-
-    .social-icon {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #06162d;
-      color: white;
-      text-align: center;
-      padding: 45px 20px;
-    }
-
-    footer h2 {
-      margin-bottom: 8px;
-    }
-
-    footer p {
-      color: #b9c6d8;
-      margin-bottom: 20px;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-bottom: 25px;
-    }
-
-    .footer-links a {
-      color: #dce6f2;
-    }
-
-    .footer-links a:hover {
-      color: #ffd166;
-    }
-
-    .copyright {
-      font-size: 13px;
-      color: #8797ad;
-    }
-
-    /* MOBILE */
-    @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .study-grid,
-      .current-grid,
-      .social-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        padding: 12px 15px;
-      }
-
-      .telegram-btn {
-        padding: 8px 12px;
-        font-size: 12px;
-      }
-
-      .hero {
-        min-height: 580px;
-        padding: 80px 18px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 65px 17px;
-      }
-
-      .section-title h2 {
-        font-size: 30px;
-      }
-
-      .study-grid,
-      .current-grid,
-      .social-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .btn {
-        width: 90%;
-        max-width: 300px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himalayan Pathshala - Target Competitive Exams</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #2b6cb0;
+            --secondary-color: #dd6b20;
+            --bg-color: #f7fafc;
+            --text-color: #2d3748;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-container input {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        nav {
+            background-color: var(--accent-color);
+            padding: 0.5rem 2rem;
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav button:hover, nav button.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .banner {
+            background: linear-gradient(135deg, #2b6cb0, #1a365d);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .video-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .btn-action {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .payment-section {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .qr-placeholder {
+            border: 2px dashed #cbd5e0;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            background: #f7fafc;
+        }
+
+        .faq-section, .contact-form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .search-container {
+                width: 100%;
+            }
+            .search-container input {
+                width: 100%;
+            }
+            .payment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header>
-  <nav>
-    <a href="#home" class="logo">🏔️ HIMALAYAN PATHSHALA</a>
+    <header>
+        <h1>Himalayan Pathshala</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" onkeyup="filterContent()" placeholder="Search Notes & Exams...">
+        </div>
+    </header>
 
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#study">Study Material</a>
-      <a href="#current">Current Affairs</a>
-      <a href="#youtube">YouTube</a>
-      <a href="#connect">Connect</a>
-      <a class="telegram-btn" href="https://t.me/hp12023" target="_blank">
-        Join Telegram
-      </a>
-    </div>
-  </nav>
-</header>
+    <nav>
+        <button class="active" onclick="filterCategory('all')">All</button>
+        <button onclick="filterCategory('hppsc')">HPPSC / HPRCA</button>
+        <button onclick="filterCategory('ukpsc')">UKPSC</button>
+        <button onclick="filterCategory('uppsc')">UPPSC</button>
+        <button onclick="filterCategory('bpsc')">BPSC</button>
+        <button onclick="filterCategory('rrb')">RRB Exams</button>
+        <button onclick="filterCategory('ca')">Current Affairs</button>
+    </nav>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-content">
+    <div class="container">
 
-    <h1>HIMALAYAN PATHSHALA</h1>
+        <!-- Banner -->
+        <div class="banner">
+            <h2>Welcome to Himalayan Pathshala</h2>
+            <p>Your One-Stop Platform for State PSC & Competitive Exam Preparation</p>
+        </div>
 
-    <h2>Your Path to Better Preparation</h2>
+        <!-- Featured Video -->
+        <section class="video-section">
+            <h2>Featured Video Lecture</h2>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Himalayan Pathshala Lecture" allowfullscreen></iframe>
+            </div>
+        </section>
 
-    <p>
-      Study Material • Current Affairs • Educational Content • Practice Resources
-    </p>
+        <!-- Material Cards -->
+        <h2>Study Material & Test Series</h2>
+        <div class="courses-grid" id="coursesGrid">
+            
+            <div class="card" data-category="hppsc">
+                <div class="card-content">
+                    <span class="badge">HPPSC / HPRCA</span>
+                    <h3>Himachal Pradesh GK Notes</h3>
+                    <p>Comprehensive coverage of HP History, Geography, and Culture for HPPSC exams.</p>
+                </div>
+                <button class="btn-action" onclick="scrollToPayment('Himachal GK Notes')">Unlock PDF (₹49)</button>
+            </div>
 
-    <div class="buttons">
-      <a href="#study" class="btn btn-primary">
-        Explore Study Material
-      </a>
+            <div class="card" data-category="ukpsc">
+                <div class="card-content">
+                    <span class="badge">UKPSC</span>
+                    <h3>Uttarakhand Special GK & GS</h3>
+                    <p>Complete static GK and previous year question papers for UKPSC Prelims.</p>
+                </div>
+                <button class="btn-action" onclick="scrollToPayment('UKPSC Special GS')">Unlock PDF (₹49)</button>
+            </div>
 
-      <a href="https://www.youtube.com/@himalayanpathshala"
-         target="_blank"
-         class="btn btn-youtube">
-        ▶ Watch on YouTube
-      </a>
-    </div>
+            <div class="card" data-category="ca">
+                <div class="card-content">
+                    <span class="badge">Current Affairs</span>
+                    <h3>Monthly Current Affairs Magazine</h3>
+                    <p>Monthly compilation focused on HPPSC, UPPSC, BPSC, and National events.</p>
+                </div>
+                <button class="btn-action" onclick="scrollToPayment('Monthly Current Affairs')">Unlock PDF (₹29)</button>
+            </div>
 
-  </div>
-</section>
+            <div class="card" data-category="rrb">
+                <div class="card-content">
+                    <span class="badge">RRB</span>
+                    <h3>RRB NTPC / Group D Test Series</h3>
+                    <p>Practice test sets with detailed solutions and analytics.</p>
+                </div>
+                <button class="btn-action" onclick="scrollToPayment('RRB Test Series')">Unlock Series (₹99)</button>
+            </div>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="container">
+        </div>
 
-    <div class="section-title">
-      <h2>About Himalayan PathShala</h2>
-    </div>
+        <!-- Payment & Access Request Section -->
+        <section class="payment-section" id="paymentSection">
+            <h2>Get Access / Unlock Study Material</h2>
+            <p>Scan the UPI QR Code to pay, then submit your details along with the Transaction ID below to receive access.</p>
+            
+            <div class="payment-grid">
+                <div class="qr-placeholder">
+                    <h3>Scan UPI QR Code</h3>
+                    <div style="background:#e2e8f0; width:180px; height:180px; margin: 10px auto; display:flex; align-items:center; justify-content:center; border-radius:4px; font-weight:bold; color:#4a5568;">
+                        [ UPI QR CODE ]
+                    </div>
+                    <p><strong>UPI ID:</strong> payment@upi</p>
+                </div>
 
-    <p class="about-text">
-      Himalayan PathShala is an educational platform created to provide useful
-      study resources, current affairs, educational content and preparation
-      materials for learners and competitive-exam aspirants.
-    </p>
+                <form onsubmit="handlePaymentSubmit(event)">
+                    <div class="form-group">
+                        <label for="courseSelect">Select Material / Course</label>
+                        <select id="courseSelect" required>
+                            <option value="">Select Course/Notes</option>
+                            <option value="Himachal GK Notes">Himachal GK Notes (₹49)</option>
+                            <option value="UKPSC Special GS">Uttarakhand Special GS (₹49)</option>
+                            <option value="Monthly Current Affairs">Monthly Current Affairs (₹29)</option>
+                            <option value="RRB Test Series">RRB Test Series (₹99)</option>
+                        </select>
+                    </div>
 
-    <div class="features">
+                    <div class="form-group">
+                        <label for="studentName">Your Name</label>
+                        <input type="text" id="studentName" required placeholder="Enter full name">
+                    </div>
 
-      <div class="card">
-        <div class="card-icon">📚</div>
-        <h3>Study Resources</h3>
-        <p>
-          Useful educational material and learning resources.
-        </p>
-      </div>
+                    <div class="form-group">
+                        <label for="studentMobile">Mobile / WhatsApp Number</label>
+                        <input type="tel" id="studentMobile" required placeholder="Enter contact number">
+                    </div>
 
-      <div class="card">
-        <div class="card-icon">📰</div>
-        <h3>Current Affairs</h3>
-        <p>
-          Important national, international and Himachal Pradesh updates.
-        </p>
-      </div>
+                    <div class="form-group">
+                        <label for="txnId">UPI Transaction ID / Ref No.</label>
+                        <input type="text" id="txnId" required placeholder="12-digit UPI Txn ID">
+                    </div>
 
-      <div class="card">
-        <div class="card-icon">🎯</div>
-        <h3>Learning & Preparation</h3>
-        <p>
-          Educational content, practice resources and useful guidance.
-        </p>
-      </div>
+                    <button type="submit" style="width: 100%; padding: 12px; background: var(--primary-color); color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Submit Verification</button>
+                </form>
+            </div>
+        </section>
 
-    </div>
-  </div>
-</section>
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h4>Q: हाउ विल आई रिसीव माई स्टडी मटेरियल आफ्टर पेमेंट? (How will I receive notes after payment?)</h4>
+                <p>A: भुगतान सत्यापित (Verify) होने के 1 से 2 घंटे के भीतर आपको WhatsApp या Telegram पर PDF भेज दी जाएगी।</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: क्या यूट्यूब पर लेक्चर्स फ्री हैं?</h4>
+                <p>A: जी हां, Himalayan Pathshala यूट्यूब चैनल पर सभी वीडियो लेक्चर्स बिल्कुल फ्री हैं।</p>
+            </div>
+        </section>
 
-<!-- STUDY MATERIAL -->
-<section class="study" id="study">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Study Material</h2>
-      <p>Explore useful resources for learning and preparation.</p>
-    </div>
-
-    <div class="study-grid">
-
-      <div class="card">
-        <div class="card-icon">📖</div>
-        <h3>General Knowledge</h3>
-        <p>
-          Important facts, concepts and educational resources.
-        </p>
-        <a href="#connect" class="small-btn">Explore</a>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">🧠</div>
-        <h3>Reasoning</h3>
-        <p>
-          Practice questions, concepts and problem-solving resources.
-        </p>
-        <a href="#connect" class="small-btn">Practice Now</a>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">🔢</div>
-        <h3>Aptitude</h3>
-        <p>
-          Quantitative aptitude concepts and practice questions.
-        </p>
-        <a href="#connect" class="small-btn">Start Practice</a>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">📰</div>
-        <h3>Current Affairs</h3>
-        <p>
-          Important current affairs, events and explanations.
-        </p>
-        <a href="#current" class="small-btn">Explore</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- CURRENT AFFAIRS -->
-<section class="current" id="current">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Latest Current Affairs</h2>
-      <p>
-        Stay informed about important developments and events.
-      </p>
-    </div>
-
-    <div class="current-grid">
-
-      <div class="card">
-        <div class="card-icon">🇮🇳</div>
-        <h3>National Affairs</h3>
-        <p>Important national developments and events.</p>
-        <a href="https://www.youtube.com/@himalayanpathshala"
-           target="_blank"
-           class="small-btn">Watch Now →</a>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">🌎</div>
-        <h3>International Affairs</h3>
-        <p>Major international developments and events.</p>
-        <a href="https://www.youtube.com/@himalayanpathshala"
-           target="_blank"
-           class="small-btn">Watch Now →</a>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">🏔️</div>
-        <h3>Himachal Pradesh</h3>
-        <p>Important Himachal Pradesh news and updates.</p>
-        <a href="https://www.youtube.com/@himalayanpathshala"
-           target="_blank"
-           class="small-btn">Watch Now →</a>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">🚀</div>
-        <h3>Defence & Technology</h3>
-        <p>Important developments in defence, science and technology.</p>
-        <a href="https://www.youtube.com/@himalayanpathshala"
-           target="_blank"
-           class="small-btn">Watch Now →</a>
-      </div>
+        <!-- Contact Form -->
+        <section class="contact-form">
+            <h2>Contact & Support</h2>
+            <form onsubmit="handleContactSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email / Phone</label>
+                    <input type="text" id="email" required placeholder="Your Email or Phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" required placeholder="Your Question or Feedback"></textarea>
+                </div>
+                <button type="submit" style="padding: 10px 20px; background: var(--primary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">Send Message</button>
+            </form>
+        </section>
 
     </div>
-  </div>
-</section>
 
-<!-- YOUTUBE -->
-<section class="youtube" id="youtube">
-  <div class="container">
+    <footer>
+        <p>&copy; 2026 Himalayan Pathshala. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://youtube.com/@himalayanpathshala" target="_blank">YouTube</a>
+            <a href="#" target="_blank">Telegram</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Facebook</a>
+        </div>
+    </footer>
 
-    <div class="section-title">
-      <h2>Learn With Himalayan PathShala</h2>
-    </div>
+    <script>
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.card');
+            const buttons = document.querySelectorAll('nav button');
 
-    <p>
-      Watch our latest educational videos, current affairs,
-      explanations and preparation content on YouTube.
-    </p>
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if(event) event.target.classList.add('active');
 
-    <a href="https://www.youtube.com/@himalayanpathshala"
-       target="_blank"
-       class="btn btn-youtube">
-      ▶ Subscribe on YouTube
-    </a>
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category').includes(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
 
-  </div>
-</section>
+        function filterContent() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
 
-<!-- CONNECT -->
-<section class="social" id="connect">
-  <div class="container">
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
 
-    <div class="section-title">
-      <h2>Stay Connected</h2>
-      <p>Follow Himalayan PathShala across our official platforms.</p>
-    </div>
+        function scrollToPayment(courseName) {
+            const select = document.getElementById('courseSelect');
+            select.value = courseName;
+            document.getElementById('paymentSection').scrollIntoView({ behavior: 'smooth' });
+        }
 
-    <div class="social-grid">
+        function handlePaymentSubmit(e) {
+            e.preventDefault();
+            alert('धन्यवाद! आपका Payment Verification Request प्राप्त हो गया है। सत्यापन के बाद स्टडी मटेरियल भेज दिया जाएगा।');
+            e.target.reset();
+        }
 
-      <!-- INSTAGRAM -->
-      <div class="card social-card">
-        <div class="social-icon">📸</div>
-        <h3>Instagram</h3>
-        <p>
-          Follow Himalayan PathShala for educational updates,
-          short-form content and announcements.
-        </p>
-        <a href="https://www.instagram.com/himalyan_pathshala"
-           target="_blank"
-           class="small-btn">
-          Follow Instagram
-        </a>
-      </div>
-
-      <!-- TELEGRAM -->
-      <div class="card social-card">
-        <div class="social-icon">📲</div>
-        <h3>Telegram</h3>
-        <p>
-          Join our Telegram channel to receive study material,
-          updates and notifications.
-        </p>
-        <a href="https://t.me/hp12023"
-           target="_blank"
-           class="small-btn">
-          Join Telegram
-        </a>
-      </div>
-
-      <!-- FACEBOOK -->
-      <div class="card social-card">
-        <div class="social-icon">f</div>
-        <h3>Facebook</h3>
-        <p>
-          Follow our official Facebook page for educational
-          content and updates.
-        </p>
-        <a href="https://www.facebook.com/share/1DNyF5fS8F/"
-           target="_blank"
-           class="small-btn">
-          Follow Facebook
-        </a>
-      </div>
-
-      <!-- YOUTUBE -->
-      <div class="card social-card">
-        <div class="social-icon">▶</div>
-        <h3>YouTube</h3>
-        <p>
-          Watch educational videos, current affairs and
-          preparation content.
-        </p>
-        <a href="https://www.youtube.com/@himalayanpathshala"
-           target="_blank"
-           class="small-btn">
-          Subscribe
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-
-  <h2>HIMALAYAN PATHSHALA</h2>
-
-  <p>Learn • Prepare • Succeed</p>
-
-  <div class="footer-links">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#study">Study Material</a>
-    <a href="#current">Current Affairs</a>
-    <a href="#youtube">YouTube</a>
-    <a href="#connect">Connect</a>
-  </div>
-
-  <p class="copyright">
-    © 2026 Himalayan PathShala. All Rights Reserved.
-  </p>
-
-</footer>
-
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            alert('संदेश भेजने के लिए धन्यवाद! हम जल्द ही आपसे संपर्क करेंगे।');
+            e.target.reset();
+        }
+    </script>
 </body>
 </html>
