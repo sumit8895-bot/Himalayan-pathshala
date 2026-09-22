@@ -1,827 +1,56 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Himalayan PathShala | Learn • Prepare • Succeed</title>
+  <title>Himalayan PathShala | Learn • Prepare • Succeed</title>
 
-<meta name="description" content="Himalayan PathShala - educational resources, current affairs, learning content and preparation resources.">
+  <meta
+    name="description"
+    content="Himalayan PathShala — study material, exam preparation, test series, current affairs and learning resources."
+  >
 
-<style>
-
-/* =========================================================
-   GLOBAL
-========================================================= */
-
-:root {
-  --navy: #071a33;
-  --navy2: #123e70;
-  --blue: #1769aa;
-  --sky: #edf6ff;
-  --gold: #f4c95d;
-  --red: #e53935;
-  --green: #159957;
-  --text: #1c2736;
-  --muted: #687589;
-  --white: #ffffff;
-  --light: #f6f8fb;
-  --border: #e4e9f0;
-  --shadow: 0 12px 35px rgba(7, 26, 51, 0.09);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: var(--light);
-  color: var(--text);
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button,
-input,
-textarea {
-  font-family: inherit;
-}
-
-.container {
-  width: min(1160px, 92%);
-  margin: auto;
-}
-
-section {
-  padding: 85px 0;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 45px;
-}
-
-.section-heading .eyebrow {
-  color: var(--blue);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 13px;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.section-heading h2 {
-  color: var(--navy);
-  font-size: clamp(30px, 4vw, 42px);
-  margin-bottom: 10px;
-}
-
-.section-heading p {
-  max-width: 700px;
-  margin: auto;
-  color: var(--muted);
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  background: rgba(7, 26, 51, 0.97);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-.navbar {
-  min-height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: white;
-  font-size: 19px;
-  font-weight: 900;
-  letter-spacing: .4px;
-  white-space: nowrap;
-}
-
-.brand-icon {
-  font-size: 27px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: #e9f1fb;
-  font-size: 14px;
-  font-weight: 600;
-  transition: .25s;
-}
-
-.nav-links a:hover {
-  color: var(--gold);
-}
-
-.nav-telegram {
-  background: #229ed9;
-  padding: 10px 16px;
-  border-radius: 24px;
-  color: white !important;
-}
-
-.nav-telegram:hover {
-  background: #168ac0;
-  transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-  min-height: 680px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      rgba(4, 22, 45, .55),
-      rgba(4, 22, 45, .82)
-    ),
-    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2200&q=90")
-    center/cover no-repeat;
-}
-
-.hero-content {
-  max-width: 900px;
-  margin: auto;
-  padding: 80px 0;
-}
-
-.hero-badge {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 1px solid rgba(255,255,255,.35);
-  border-radius: 30px;
-  background: rgba(255,255,255,.1);
-  backdrop-filter: blur(8px);
-  font-size: 13px;
-  margin-bottom: 22px;
-}
-
-.hero h1 {
-  font-size: clamp(44px, 8vw, 82px);
-  line-height: 1.05;
-  letter-spacing: 2px;
-  font-weight: 900;
-  margin-bottom: 18px;
-}
-
-.hero h1 span {
-  color: var(--gold);
-}
-
-.hero h2 {
-  font-size: clamp(21px, 3vw, 34px);
-  margin-bottom: 18px;
-}
-
-.hero p {
-  max-width: 760px;
-  margin: auto auto 32px;
-  font-size: 18px;
-  color: #e8eef7;
-}
-
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 24px;
-  border-radius: 30px;
-  font-weight: 800;
-  transition: .25s;
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-.btn-gold {
-  background: var(--gold);
-  color: var(--navy);
-}
-
-.btn-youtube {
-  background: var(--red);
-  color: white;
-}
-
-.btn-telegram {
-  background: #229ed9;
-  color: white;
-}
-
-
-/* =========================================================
-   FILTER BAR
-========================================================= */
-
-.quick-nav {
-  background: white;
-  border-bottom: 1px solid var(--border);
-  padding: 18px 0;
-  position: sticky;
-  top: 72px;
-  z-index: 900;
-}
-
-.filter-bar {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  padding-bottom: 3px;
-}
-
-.filter-btn {
-  flex: 0 0 auto;
-  border: 1px solid var(--border);
-  background: white;
-  color: var(--navy);
-  padding: 9px 17px;
-  border-radius: 25px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: .2s;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-  background: var(--navy);
-  color: white;
-  border-color: var(--navy);
-}
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-.search-area {
-  background: white;
-  padding: 25px 0;
-}
-
-.search-box {
-  max-width: 700px;
-  margin: auto;
-  position: relative;
-}
-
-.search-box input {
-  width: 100%;
-  padding: 15px 20px;
-  border: 1px solid var(--border);
-  border-radius: 35px;
-  outline: none;
-  font-size: 16px;
-  box-shadow: 0 5px 20px rgba(0,0,0,.05);
-}
-
-.search-box input:focus {
-  border-color: var(--blue);
-}
-
-
-/* =========================================================
-   FEATURED YOUTUBE
-========================================================= */
-
-.featured {
-  background: var(--light);
-}
-
-.video-card {
-  background: white;
-  border-radius: 22px;
-  padding: 18px;
-  box-shadow: var(--shadow);
-  max-width: 950px;
-  margin: auto;
-}
-
-.youtube-banner {
-  background:
-    linear-gradient(135deg, #071a33, #123e70);
-  border-radius: 18px;
-  padding: 70px 25px;
-  text-align: center;
-  color: white;
-}
-
-.youtube-icon {
-  font-size: 68px;
-  margin-bottom: 15px;
-}
-
-.youtube-banner h3 {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.youtube-banner p {
-  max-width: 650px;
-  margin: 0 auto 25px;
-  color: #dce6f2;
-  font-size: 17px;
-}
-
-.video-caption {
-  padding: 20px 8px 5px;
-}
-
-.video-caption h3 {
-  color: var(--navy);
-  font-size: 23px;
-  margin-bottom: 5px;
-}
-
-.video-caption p {
-  color: var(--muted);
-}
-
-
-/* =========================================================
-   RESOURCE CARDS
-========================================================= */
-
-.resources {
-  background: white;
-}
-
-.resource-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-}
-
-.card {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 27px;
-  box-shadow: 0 5px 22px rgba(7,26,51,.05);
-  transition: .3s;
-}
-
-.card:hover {
-  transform: translateY(-7px);
-  box-shadow: var(--shadow);
-}
-
-.card-icon {
-  font-size: 38px;
-  margin-bottom: 13px;
-}
-
-.card h3 {
-  color: var(--navy);
-  margin-bottom: 8px;
-  font-size: 20px;
-}
-
-.card p {
-  color: var(--muted);
-  margin-bottom: 18px;
-}
-
-.card-button {
-  display: inline-block;
-  background: var(--navy);
-  color: white;
-  padding: 9px 15px;
-  border-radius: 22px;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-
-/* =========================================================
-   CURRENT AFFAIRS
-========================================================= */
-
-.current {
-  background: #edf4fb;
-}
-
-.current-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about {
-  background: white;
-}
-
-.about-content {
-  max-width: 850px;
-  text-align: center;
-  margin: auto;
-}
-
-.about-content p {
-  color: var(--muted);
-  font-size: 17px;
-}
-
-.about-points {
-  margin-top: 35px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.about-point {
-  padding: 22px;
-  background: var(--light);
-  border-radius: 16px;
-}
-
-.about-point strong {
-  display: block;
-  color: var(--navy);
-  margin-bottom: 5px;
-}
-
-
-/* =========================================================
-   YOUTUBE CTA
-========================================================= */
-
-.youtube-cta {
-  background: linear-gradient(135deg, #071a33, #123e70);
-  color: white;
-  text-align: center;
-}
-
-.youtube-cta h2 {
-  color: white;
-}
-
-.youtube-cta p {
-  max-width: 700px;
-  margin: auto auto 28px;
-  color: #dce6f2;
-  font-size: 17px;
-}
-
-
-/* =========================================================
-   FAQ
-========================================================= */
-
-.faq {
-  background: var(--light);
-}
-
-.faq-list {
-  max-width: 850px;
-  margin: auto;
-}
-
-details {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  margin-bottom: 12px;
-  padding: 17px 20px;
-}
-
-summary {
-  cursor: pointer;
-  color: var(--navy);
-  font-weight: 800;
-}
-
-details p {
-  color: var(--muted);
-  padding-top: 12px;
-}
-
-
-/* =========================================================
-   SOCIAL
-========================================================= */
-
-.connect {
-  background: white;
-}
-
-.social-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-}
-
-.social-card {
-  text-align: center;
-}
-
-.social-icon {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.social-card .card-button {
-  margin-top: 4px;
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact {
-  background: #edf4fb;
-}
-
-.contact-box {
-  max-width: 750px;
-  margin: auto;
-  background: white;
-  padding: 35px;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-}
-
-.form-group {
-  margin-bottom: 18px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 7px;
-  font-weight: 700;
-  color: var(--navy);
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 13px 15px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  outline: none;
-  font-size: 15px;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: var(--blue);
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-  background: #041329;
-  color: white;
-  padding: 50px 20px 25px;
-  text-align: center;
-}
-
-footer h2 {
-  font-size: 25px;
-  margin-bottom: 5px;
-}
-
-.footer-tagline {
-  color: var(--gold);
-  margin-bottom: 22px;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin-bottom: 25px;
-}
-
-.footer-links a {
-  color: #cbd7e6;
-  font-size: 14px;
-}
-
-.footer-links a:hover {
-  color: var(--gold);
-}
-
-.footer-social {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 25px;
-}
-
-.footer-social a {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: rgba(255,255,255,.09);
-  color: white;
-  font-weight: 800;
-}
-
-.copyright {
-  border-top: 1px solid rgba(255,255,255,.1);
-  padding-top: 20px;
-  color: #8999ae;
-  font-size: 13px;
-}
-
-
-/* =========================================================
-   NO RESULTS
-========================================================= */
-
-.no-results {
-  display: none;
-  text-align: center;
-  padding: 30px;
-  color: var(--muted);
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1000px) {
-
-  .nav-links a:not(.nav-telegram) {
-    display: none;
-  }
-
-  .resource-grid,
-  .current-grid,
-  .social-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-points {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-
-  section {
-    padding: 65px 0;
-  }
-
-  .navbar {
-    min-height: 64px;
-  }
-
-  .brand {
-    font-size: 16px;
-  }
-
-  .quick-nav {
-    top: 64px;
-  }
-
-  .hero {
-    min-height: 610px;
-  }
-
-  .hero-content {
-    padding: 60px 0;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn {
-    width: min(300px, 90%);
-  }
-
-  .resource-grid,
-  .current-grid,
-  .social-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-box {
-    padding: 24px;
-  }
-
-  .youtube-banner {
-    padding: 50px 20px;
-  }
-
-  .youtube-banner h3 {
-    font-size: 25px;
-  }
-
-}
-
-</style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 
 <body>
 
+<!-- ================= HEADER ================= -->
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+<header class="site-header">
 
-<header>
+  <div class="container nav-wrap">
 
-  <div class="container navbar">
+    <a class="brand" href="#home">
 
-    <a href="#home" class="brand">
-      <span class="brand-icon">🏔️</span>
-      HIMALAYAN PATHSHALA
+      <!-- Temporary logo -->
+      <div class="brand-mark">HP</div>
+
+      <div>
+        <strong>Himalayan PathShala</strong>
+        <span>Learn • Prepare • Succeed</span>
+      </div>
+
     </a>
 
-    <nav class="nav-links">
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open menu"
+    >
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
 
       <a href="#home">Home</a>
-
-      <a href="#about">About</a>
-
-      <a href="#resources">Resources</a>
-
-      <a href="#current">Current Affairs</a>
-
+      <a href="#study-material">Study Material</a>
+      <a href="#test-series">Test Series</a>
+      <a href="#current-affairs">Current Affairs</a>
       <a href="#youtube">YouTube</a>
-
-      <a href="#connect">Connect</a>
-
-      <a
-        href="https://t.me/hp12023"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="nav-telegram">
-        Join Telegram
-      </a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="#connect">Connect</a>
 
     </nav>
 
@@ -830,206 +59,212 @@ footer h2 {
 </header>
 
 
-<!-- =========================================================
-     HERO
-========================================================= -->
+<main id="home">
 
-<section class="hero" id="home">
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <div class="hero-overlay"></div>
 
   <div class="container hero-content">
 
-    <div class="hero-badge">
-      EDUCATION • KNOWLEDGE • PREPARATION
-    </div>
+    <span class="hero-badge">
+      A focused learning platform for serious preparation
+    </span>
 
     <h1>
-      HIMALAYAN <span>PATHSHALA</span>
+      Himalayan <span>PathShala</span>
     </h1>
 
-    <h2>
-      Your Path to Better Preparation
-    </h2>
-
-    <p>
-      Study resources, current affairs, educational videos
-      and useful learning content — all in one place.
+    <p class="hero-tagline">
+      Learn • Prepare • Succeed
     </p>
 
-    <div class="hero-buttons">
+    <p class="hero-copy">
+      Study smarter with organised notes, exam-focused resources,
+      practice tests, current affairs and useful learning content —
+      all in one place.
+    </p>
 
-      <a
-        href="#resources"
-        class="btn btn-gold">
-        📚 Explore Resources
+    <div class="hero-actions">
+
+      <a class="btn btn-primary" href="#study-material">
+        Start Learning →
       </a>
 
-      <a
-        href="https://www.youtube.com/@himalayanpathshala"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-youtube">
-        ▶ Watch on YouTube
-      </a>
-
-      <a
-        href="https://t.me/hp12023"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-telegram">
-        📲 Join Telegram
+      <a class="btn btn-glass" href="#test-series">
+        Explore Test Series
       </a>
 
     </div>
+
+    <div class="hero-trust">
+
+      <span>✓ Free resources</span>
+      <span>✓ Premium resources</span>
+      <span>✓ Exam-focused practice</span>
+
+    </div>
+
+  </div>
+
+  <div class="mountain-divider"></div>
+
+</section>
+
+
+<!-- ================= QUICK LINKS ================= -->
+
+<section class="quick-strip">
+
+  <div class="container quick-grid">
+
+    <a href="#study-material">
+      <span class="quick-icon">📚</span>
+
+      <span>
+        <b>Study Material</b>
+        <small>Free & premium resources</small>
+      </span>
+    </a>
+
+    <a href="#test-series">
+      <span class="quick-icon">⏱</span>
+
+      <span>
+        <b>Test Series</b>
+        <small>Exam-wise practice</small>
+      </span>
+    </a>
+
+    <a href="#current-affairs">
+      <span class="quick-icon">📰</span>
+
+      <span>
+        <b>Current Affairs</b>
+        <small>Stay updated</small>
+      </span>
+    </a>
+
+    <a href="#youtube">
+      <span class="quick-icon">▶</span>
+
+      <span>
+        <b>YouTube</b>
+        <small>Video learning</small>
+      </span>
+    </a>
 
   </div>
 
 </section>
 
 
-<!-- =========================================================
-     FILTER BAR
-========================================================= -->
+<!-- ================= LEARNING HUB ================= -->
 
-<div class="quick-nav">
-
-  <div class="container">
-
-    <div class="filter-bar">
-
-      <button
-        class="filter-btn active"
-        data-filter="all">
-        All
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="class9">
-        Class 9
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="class10">
-        Class 10
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="science">
-        Science
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="maths">
-        Maths
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="current">
-        Current Affairs
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================================================
-     SEARCH
-========================================================= -->
-
-<section class="search-area">
-
-  <div class="container">
-
-    <div class="search-box">
-
-      <input
-        type="search"
-        id="searchInput"
-        placeholder="🔎 Search study resources, subjects or topics..."
-        aria-label="Search resources">
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     YOUTUBE
-========================================================= -->
-
-<section class="featured" id="youtube">
+<section class="section" id="learning">
 
   <div class="container">
 
     <div class="section-heading">
 
-      <div class="eyebrow">
-        Watch & Learn
-      </div>
+      <span class="eyebrow">
+        LEARNING HUB
+      </span>
 
       <h2>
-        Himalayan PathShala on YouTube
+        Explore Your Subjects
       </h2>
 
       <p>
-        Watch educational videos, current affairs,
-        explanations and preparation content.
+        Clear subject-wise organisation so you can find what
+        you need without wasting time.
       </p>
 
     </div>
 
 
-    <div class="video-card">
+    <div class="subject-grid">
 
-      <div class="youtube-banner">
-
-        <div class="youtube-icon">
-          ▶️
-        </div>
-
-        <h3>
-          Himalayan PathShala
-        </h3>
-
+      <a class="subject-card" href="#study-material">
+        <span>🏔️</span>
+        <h3>HP GK</h3>
         <p>
-          Explore our educational videos, current affairs,
-          learning resources and preparation content.
+          Himachal Pradesh-focused knowledge resources.
         </p>
-
-        <a
-          href="https://www.youtube.com/@himalayanpathshala"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-youtube">
-
-          ▶ Visit YouTube Channel
-
-        </a>
-
-      </div>
+        <b>Explore →</b>
+      </a>
 
 
-      <div class="video-caption">
-
-        <h3>
-          Learn With Himalayan PathShala
-        </h3>
-
+      <a class="subject-card" href="#study-material">
+        <span>⚖️</span>
+        <h3>Polity</h3>
         <p>
-          Follow our YouTube channel for new educational
-          videos and learning content.
+          Constitution, governance and important concepts.
         </p>
+        <b>Explore →</b>
+      </a>
 
-      </div>
+
+      <a class="subject-card" href="#study-material">
+        <span>📜</span>
+        <h3>History</h3>
+        <p>
+          Important historical topics and revision notes.
+        </p>
+        <b>Explore →</b>
+      </a>
+
+
+      <a class="subject-card" href="#study-material">
+        <span>🌍</span>
+        <h3>Geography</h3>
+        <p>
+          India, world and Himachal geography resources.
+        </p>
+        <b>Explore →</b>
+      </a>
+
+
+      <a class="subject-card" href="#study-material">
+        <span>🔬</span>
+        <h3>General Science</h3>
+        <p>
+          Exam-oriented science notes and practice.
+        </p>
+        <b>Explore →</b>
+      </a>
+
+
+      <a class="subject-card" href="#study-material">
+        <span>➗</span>
+        <h3>Aptitude</h3>
+        <p>
+          Practice-focused quantitative preparation.
+        </p>
+        <b>Explore →</b>
+      </a>
+
+
+      <a class="subject-card" href="#study-material">
+        <span>🧠</span>
+        <h3>Reasoning</h3>
+        <p>
+          Logical reasoning concepts and practice.
+        </p>
+        <b>Explore →</b>
+      </a>
+
+
+      <a class="subject-card" href="#current-affairs">
+        <span>🌐</span>
+        <h3>Current Affairs</h3>
+        <p>
+          National, international and important updates.
+        </p>
+        <b>Explore →</b>
+      </a>
 
     </div>
 
@@ -1038,27 +273,47 @@ footer h2 {
 </section>
 
 
-<!-- =========================================================
-     RESOURCES
-========================================================= -->
+<!-- ================= STUDY MATERIAL ================= -->
 
-<section class="resources" id="resources">
+<section class="section section-soft" id="study-material">
 
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-heading row-heading">
 
-      <div class="eyebrow">
-        Learn & Prepare
+      <div>
+
+        <span class="eyebrow">
+          STUDY MATERIAL
+        </span>
+
+        <h2>
+          Learn at Your Own Pace
+        </h2>
+
+        <p>
+          Download free resources or access premium
+          exam-focused material.
+        </p>
+
       </div>
 
-      <h2>
-        Study Resources
-      </h2>
 
-      <p>
-        Explore learning resources and preparation content.
-      </p>
+      <div class="filter-wrap">
+
+        <button class="filter active" data-filter="all">
+          All
+        </button>
+
+        <button class="filter" data-filter="free">
+          Free
+        </button>
+
+        <button class="filter" data-filter="premium">
+          Premium
+        </button>
+
+      </div>
 
     </div>
 
@@ -1066,230 +321,209 @@ footer h2 {
     <div class="resource-grid" id="resourceGrid">
 
 
-      <article
-        class="card resource-card"
-        data-category="class9 science">
+      <!-- FREE RESOURCE -->
 
-        <div class="card-icon">
-          🔬
+      <article class="resource-card" data-type="free">
+
+        <div class="resource-top free-label">
+
+          <span>FREE</span>
+          <i>PDF</i>
+
         </div>
 
-        <h3>
-          Class 9 Science
-        </h3>
 
-        <p>
-          Build strong fundamentals in science
-          through simple explanations.
-        </p>
+        <div class="resource-body">
 
-        <a
-          href="https://www.youtube.com/@himalayanpathshala"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="card-button">
-          Explore
-        </a>
+          <span class="tag">
+            HP GK
+          </span>
+
+          <h3>
+            HP GK Revision Notes
+          </h3>
+
+          <p>
+            Quick revision material for important
+            Himachal Pradesh topics.
+          </p>
+
+          <div class="resource-meta">
+            <span>📄 PDF</span>
+            <span>Free</span>
+          </div>
+
+          <button
+            class="btn btn-outline full"
+            data-action="download"
+            data-title="HP GK Revision Notes"
+          >
+            Download Free
+          </button>
+
+        </div>
 
       </article>
 
 
-      <article
-        class="card resource-card"
-        data-category="class9 maths">
+      <!-- FREE RESOURCE -->
 
-        <div class="card-icon">
-          📐
+      <article class="resource-card" data-type="free">
+
+        <div class="resource-top free-label">
+
+          <span>FREE</span>
+          <i>PDF</i>
+
         </div>
 
-        <h3>
-          Class 9 Mathematics
-        </h3>
 
-        <p>
-          Learn mathematical concepts,
-          problem solving and practice.
-        </p>
+        <div class="resource-body">
 
-        <a
-          href="https://www.youtube.com/@himalayanpathshala"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="card-button">
-          Explore
-        </a>
+          <span class="tag">
+            POLITY
+          </span>
+
+          <h3>
+            Indian Polity Quick Revision
+          </h3>
+
+          <p>
+            Concise concepts for fast revision
+            and practice.
+          </p>
+
+          <div class="resource-meta">
+            <span>📄 PDF</span>
+            <span>Free</span>
+          </div>
+
+          <button
+            class="btn btn-outline full"
+            data-action="download"
+            data-title="Indian Polity Quick Revision"
+          >
+            Download Free
+          </button>
+
+        </div>
 
       </article>
 
 
-      <article
-        class="card resource-card"
-        data-category="class10 science">
+      <!-- PREMIUM RESOURCE -->
 
-        <div class="card-icon">
-          🧪
+      <article class="resource-card" data-type="premium">
+
+        <div class="resource-top premium-label">
+
+          <span>PREMIUM</span>
+          <i>PDF</i>
+
         </div>
 
-        <h3>
-          Class 10 Science
-        </h3>
 
-        <p>
-          Strengthen Physics, Chemistry
-          and Biology concepts.
-        </p>
+        <div class="resource-body">
 
-        <a
-          href="https://www.youtube.com/@himalayanpathshala"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="card-button">
-          Explore
-        </a>
+          <span class="tag">
+            HISTORY
+          </span>
+
+          <h3>
+            History Complete Notes
+          </h3>
+
+          <p>
+            Structured study material designed
+            for exam preparation.
+          </p>
+
+          <div class="resource-meta">
+            <span>📄 PDF</span>
+            <span>Premium</span>
+          </div>
+
+          <button
+            class="btn btn-primary full"
+            data-action="premium"
+            data-title="History Complete Notes"
+            data-price="99"
+          >
+            View Purchase
+          </button>
+
+        </div>
 
       </article>
 
 
-      <article
-        class="card resource-card"
-        data-category="class10 maths">
+      <!-- PREMIUM RESOURCE -->
 
-        <div class="card-icon">
-          🔢
+      <article class="resource-card" data-type="premium">
+
+        <div class="resource-top premium-label">
+
+          <span>PREMIUM</span>
+          <i>PDF</i>
+
         </div>
 
-        <h3>
-          Class 10 Mathematics
-        </h3>
 
-        <p>
-          Concepts, practice questions
-          and examination preparation.
-        </p>
+        <div class="resource-body">
 
-        <a
-          href="https://www.youtube.com/@himalayanpathshala"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="card-button">
-          Explore
-        </a>
+          <span class="tag">
+            GEOGRAPHY
+          </span>
 
-      </article>
+          <h3>
+            Geography Exam Pack
+          </h3>
 
+          <p>
+            Topic-wise notes with a
+            revision-friendly structure.
+          </p>
 
-      <article
-        class="card resource-card"
-        data-category="current">
+          <div class="resource-meta">
+            <span>📄 PDF</span>
+            <span>Premium</span>
+          </div>
 
-        <div class="card-icon">
-          📰
+          <button
+            class="btn btn-primary full"
+            data-action="premium"
+            data-title="Geography Exam Pack"
+            data-price="99"
+          >
+            View Purchase
+          </button>
+
         </div>
 
-        <h3>
-          Current Affairs
-        </h3>
-
-        <p>
-          Important national, international
-          and regional developments.
-        </p>
-
-        <a
-          href="#current"
-          class="card-button">
-          Explore
-        </a>
-
       </article>
-
-
-      <article
-        class="card resource-card"
-        data-category="science">
-
-        <div class="card-icon">
-          🚀
-        </div>
-
-        <h3>
-          Science & Technology
-        </h3>
-
-        <p>
-          Important developments in science,
-          technology and innovation.
-        </p>
-
-        <a
-          href="#current"
-          class="card-button">
-          Explore
-        </a>
-
-      </article>
-
-
-      <article
-        class="card resource-card"
-        data-category="current">
-
-        <div class="card-icon">
-          🇮🇳
-        </div>
-
-        <h3>
-          National Affairs
-        </h3>
-
-        <p>
-          Important events and developments
-          from across India.
-        </p>
-
-        <a
-          href="#current"
-          class="card-button">
-          Explore
-        </a>
-
-      </article>
-
-
-      <article
-        class="card resource-card"
-        data-category="current">
-
-        <div class="card-icon">
-          🌎
-        </div>
-
-        <h3>
-          International Affairs
-        </h3>
-
-        <p>
-          Major international events,
-          developments and explanations.
-        </p>
-
-        <a
-          href="#current"
-          class="card-button">
-          Explore
-        </a>
-
-      </article>
-
 
     </div>
 
 
-    <div
-      class="no-results"
-      id="noResults">
+    <div class="info-banner">
 
-      No matching resources found.
+      <div>
+
+        <strong>
+          How premium downloads will work
+        </strong>
+
+        <p>
+          Customer selects a resource → pays using your chosen
+          UPI method → submits transaction/UTR → admin verifies →
+          approved customer receives the protected download.
+        </p>
+
+      </div>
+
+      <span class="info-icon">
+        🔐
+      </span>
 
     </div>
 
@@ -1298,101 +532,877 @@ footer h2 {
 </section>
 
 
-<!-- =========================================================
-     CURRENT AFFAIRS
-========================================================= -->
+<!-- ================= TEST SERIES ================= -->
 
-<section class="current" id="current">
+<section class="section" id="test-series">
 
   <div class="container">
 
     <div class="section-heading">
 
-      <div class="eyebrow">
-        Stay Informed
-      </div>
+      <span class="eyebrow">
+        TEST SERIES
+      </span>
 
       <h2>
-        Current Affairs
+        Practice With Exam Profiles
       </h2>
 
       <p>
-        Follow important developments and educational explanations.
+        Each exam profile controls the question distribution
+        and test rules.
       </p>
 
     </div>
 
 
-    <div class="current-grid">
+    <div class="workflow">
 
+      <div>
 
-      <article class="card">
-
-        <div class="card-icon">
-          🇮🇳
-        </div>
+        <span>01</span>
 
         <h3>
-          National Affairs
+          Select Exam
         </h3>
 
         <p>
-          Important developments and events in India.
+          Choose the exam profile.
         </p>
 
-        <a
-          href="https://www.youtube.com/@himalayanpathshala"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="card-button">
-          Watch Now →
-        </a>
+      </div>
+
+
+      <div>
+
+        <span>02</span>
+
+        <h3>
+          Question Bank
+        </h3>
+
+        <p>
+          Use reusable subject-wise questions.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <span>03</span>
+
+        <h3>
+          Generate Test
+        </h3>
+
+        <p>
+          Questions follow the profile.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <span>04</span>
+
+        <h3>
+          Attempt & Review
+        </h3>
+
+        <p>
+          Get score and solutions.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="profile-grid">
+
+
+      <article class="profile-card">
+
+        <div class="profile-icon">
+          🎯
+        </div>
+
+        <span class="tag">
+          EXAM PROFILE
+        </span>
+
+        <h3>
+          General Competitive Profile
+        </h3>
+
+        <ul>
+
+          <li>
+            <b>Questions:</b> 100
+          </li>
+
+          <li>
+            <b>Duration:</b> 90 minutes
+          </li>
+
+          <li>
+            <b>Subjects:</b> Configurable
+          </li>
+
+          <li>
+            <b>Negative marking:</b> Configurable
+          </li>
+
+        </ul>
+
+        <button
+          class="btn btn-primary full"
+          data-action="test"
+        >
+          View Practice Test
+        </button>
 
       </article>
 
 
-      <article class="card">
+      <article class="profile-card featured-profile">
 
-        <div class="card-icon">
-          🌎
+        <div class="profile-ribbon">
+          FEATURED
         </div>
 
+        <div class="profile-icon">
+          📘
+        </div>
+
+        <span class="tag">
+          EXAM PROFILE
+        </span>
+
         <h3>
-          International Affairs
+          Full-Length Mock Profile
         </h3>
 
-        <p>
-          Major global developments and events.
-        </p>
+        <ul>
 
-        <a
-          href="https://www.youtube.com/@himalayanpathshala"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="card-button">
-          Watch Now →
-        </a>
+          <li>
+            <b>Questions:</b> 120
+          </li>
+
+          <li>
+            <b>Duration:</b> 120 minutes
+          </li>
+
+          <li>
+            <b>Subjects:</b> Exam-wise distribution
+          </li>
+
+          <li>
+            <b>Solutions:</b> Included
+          </li>
+
+        </ul>
+
+        <button
+          class="btn btn-primary full"
+          data-action="test"
+        >
+          View Practice Test
+        </button>
 
       </article>
 
 
-      <article class="card">
+      <article class="profile-card">
 
-        <div class="card-icon">
-          🏔️
+        <div class="profile-icon">
+          ⚡
         </div>
 
+        <span class="tag">
+          EXAM PROFILE
+        </span>
+
         <h3>
-          Himachal Pradesh
+          Quick Practice Profile
+        </h3>
+
+        <ul>
+
+          <li>
+            <b>Questions:</b> 25
+          </li>
+
+          <li>
+            <b>Duration:</b> 20 minutes
+          </li>
+
+          <li>
+            <b>Subjects:</b> Selective practice
+          </li>
+
+          <li>
+            <b>Review:</b> Instant
+          </li>
+
+        </ul>
+
+        <button
+          class="btn btn-primary full"
+          data-action="test"
+        >
+          View Practice Test
+        </button>
+
+      </article>
+
+    </div>
+
+
+    <div class="admin-note">
+
+      <span>⚙️</span>
+
+      <div>
+
+        <strong>
+          Future admin workflow
+        </strong>
+
+        <p>
+          Admin Dashboard → Create Exam Profile →
+          Upload Question Bank → Set distribution →
+          Generate Test → Publish.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CURRENT AFFAIRS ================= -->
+
+<section class="section section-soft" id="current-affairs">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">
+        CURRENT AFFAIRS
+      </span>
+
+      <h2>
+        Stay Updated
+      </h2>
+
+      <p>
+        Keep important updates organised into simple
+        categories for regular revision.
+      </p>
+
+    </div>
+
+
+    <div class="affairs-grid">
+
+      <article>
+
+        <span>🇮🇳</span>
+
+        <h3>
+          National
         </h3>
 
         <p>
-          Important updates and educational content
-          related to Himachal Pradesh.
+          Important national developments and
+          exam-relevant updates.
         </p>
 
-        <a
-          href="https://www.youtube.com/@himalayanpathshala"
-          target="_blank"
-          rel="noopene
-```
+      </article>
+
+
+      <article>
+
+        <span>🌎</span>
+
+        <h3>
+          International
+        </h3>
+
+        <p>
+          Major global events and important
+          international updates.
+        </p>
+
+      </article>
+
+
+      <article>
+
+        <span>🏔️</span>
+
+        <h3>
+          Himachal
+        </h3>
+
+        <p>
+          State-focused news, facts and
+          important developments.
+        </p>
+
+      </article>
+
+
+      <article>
+
+        <span>🛡️</span>
+
+        <h3>
+          Defence
+        </h3>
+
+        <p>
+          Relevant defence news, exercises
+          and developments.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= YOUTUBE ================= -->
+
+<section class="section youtube-section" id="youtube">
+
+  <div class="container">
+
+    <div class="youtube-card">
+
+      <div class="youtube-content">
+
+        <span class="eyebrow light">
+          HIMALAYAN PATHSHALA YOUTUBE CHANNEL
+        </span>
+
+        <h2>
+          Learn Through Video
+        </h2>
+
+        <p>
+          Watch classes, explanations, exam guidance
+          and educational updates on the Himalayan
+          PathShala YouTube channel.
+        </p>
+
+        <div class="youtube-actions">
+
+          <a
+            class="btn btn-youtube"
+            href="https://www.youtube.com/@himalayanpathshala"
+            target="_blank"
+            rel="noopener"
+          >
+            ▶ Visit YouTube Channel
+          </a>
+
+          <a
+            class="btn btn-glass"
+            href="https://www.youtube.com/@himalayanpathshala"
+            target="_blank"
+            rel="noopener"
+          >
+            View All Videos
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="youtube-art">
+
+        <div class="play-circle">
+          ▶
+        </div>
+
+        <span>
+          Himalayan PathShala
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section" id="about">
+
+  <div class="container about-grid">
+
+    <div>
+
+      <span class="eyebrow">
+        ABOUT HIMALAYAN PATHSHALA
+      </span>
+
+      <h2>
+        Simple learning.
+        Serious preparation.
+      </h2>
+
+      <p>
+        Himalayan PathShala is being built as a focused
+        learning platform for students and aspirants who
+        want organised resources, practical revision
+        and regular test practice.
+      </p>
+
+      <p>
+        The long-term platform will bring study material,
+        test series, question banks, current affairs and
+        learner accounts together in one place.
+      </p>
+
+    </div>
+
+
+    <div class="about-points">
+
+      <div>
+
+        <span>01</span>
+
+        <strong>
+          Organised Resources
+        </strong>
+
+        <p>
+          Find material subject by subject.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <span>02</span>
+
+        <strong>
+          Exam Profiles
+        </strong>
+
+        <p>
+          Tests can follow the exact rules of each exam.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <span>03</span>
+
+        <strong>
+          Progress & Results
+        </strong>
+
+        <p>
+          Results can show accuracy, attempts and solutions.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <span>04</span>
+
+        <strong>
+          Community Learning
+        </strong>
+
+        <p>
+          Stay connected through social channels and YouTube.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CONNECT ================= -->
+
+<section class="section section-soft" id="connect">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">
+        JOIN THE COMMUNITY
+      </span>
+
+      <h2>
+        Stay Connected
+      </h2>
+
+      <p>
+        Follow Himalayan PathShala for new resources,
+        videos and updates.
+      </p>
+
+    </div>
+
+
+    <div class="social-grid">
+
+
+      <a
+        href="https://www.youtube.com/@himalayanpathshala"
+        target="_blank"
+        rel="noopener"
+        class="social youtube"
+      >
+
+        <span>▶</span>
+
+        <div>
+          <b>YouTube</b>
+          <small>Watch new videos</small>
+        </div>
+
+      </a>
+
+
+      <a
+        href="https://www.instagram.com/himalyan_pathshala"
+        target="_blank"
+        rel="noopener"
+        class="social instagram"
+      >
+
+        <span>◎</span>
+
+        <div>
+          <b>Instagram</b>
+          <small>Follow updates</small>
+        </div>
+
+      </a>
+
+
+      <a
+        href="https://t.me/hp12023"
+        target="_blank"
+        rel="noopener"
+        class="social telegram"
+      >
+
+        <span>➤</span>
+
+        <div>
+          <b>Telegram</b>
+          <small>Join the community</small>
+        </div>
+
+      </a>
+
+
+      <a
+        href="https://www.facebook.com/share/1DNyF5fS8F/"
+        target="_blank"
+        rel="noopener"
+        class="social facebook"
+      >
+
+        <span>f</span>
+
+        <div>
+          <b>Facebook</b>
+          <small>Connect with us</small>
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FAQ ================= -->
+
+<section class="section faq-section" id="faq">
+
+  <div class="container narrow">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">
+        FAQ
+      </span>
+
+      <h2>
+        Frequently Asked Questions
+      </h2>
+
+    </div>
+
+
+    <div class="faq-list">
+
+      <details>
+
+        <summary>
+          Will free study material remain available?
+        </summary>
+
+        <p>
+          Yes. The site can contain both free and premium resources.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          How will premium PDFs be delivered?
+        </summary>
+
+        <p>
+          Initially, the planned flow is UPI payment →
+          customer submits UTR/transaction ID → Himalayan
+          PathShala verifies the payment → approved customer
+          receives access to the protected resource.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Can the same question bank be reused?
+        </summary>
+
+        <p>
+          Yes. The planned question bank is reusable across
+          multiple tests and exam profiles.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Can exam rules be different for different tests?
+        </summary>
+
+        <p>
+          Yes. Exam Profiles are designed specifically for this:
+          question count, subject distribution, duration and
+          marking rules can be configured separately.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Will there be a customer account?
+        </summary>
+
+        <p>
+          That is part of the next backend stage, where customers
+          can see purchases, tests and available downloads.
+        </p>
+
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <div>
+
+      <div class="brand footer-brand">
+
+        <div class="brand-mark">
+          HP
+        </div>
+
+        <div>
+
+          <strong>
+            Himalayan PathShala
+          </strong>
+
+          <span>
+            Learn • Prepare • Succeed
+          </span>
+
+        </div>
+
+      </div>
+
+      <p>
+        Focused learning resources for better preparation.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Explore
+      </h4>
+
+      <a href="#study-material">
+        Study Material
+      </a>
+
+      <a href="#test-series">
+        Test Series
+      </a>
+
+      <a href="#current-affairs">
+        Current Affairs
+      </a>
+
+      <a href="#youtube">
+        YouTube
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <h4>
+        Connect
+      </h4>
+
+      <a
+        href="https://www.instagram.com/himalyan_pathshala"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram
+      </a>
+
+      <a
+        href="https://t.me/hp12023"
+        target="_blank"
+        rel="noopener"
+      >
+        Telegram
+      </a>
+
+      <a
+        href="https://www.facebook.com/share/1DNyF5fS8F/"
+        target="_blank"
+        rel="noopener"
+      >
+        Facebook
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <div class="container">
+
+      © <span id="year"></span>
+      Himalayan PathShala.
+      All rights reserved.
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- ================= MODAL ================= -->
+
+<div
+  class="modal"
+  id="modal"
+  aria-hidden="true"
+>
+
+  <div
+    class="modal-backdrop"
+    data-close
+  ></div>
+
+  <div class="modal-box">
+
+    <button
+      class="modal-close"
+      data-close
+      aria-label="Close"
+    >
+      ×
+    </button>
+
+    <div id="modalContent"></div>
+
+  </div>
+
+</div>
+
+
+<button
+  class="back-top"
+  id="backTop"
+  aria-label="Back to top"
+>
+  ↑
+</button>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
