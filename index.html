@@ -11,15 +11,15 @@
 
 <style>
 
-/* =========================
+/* =========================================================
    GLOBAL
-========================= */
+========================================================= */
 
 :root {
   --navy: #071a33;
-  --navy-2: #0c2b52;
+  --navy2: #123e70;
   --blue: #1769aa;
-  --sky: #eaf4ff;
+  --sky: #edf6ff;
   --gold: #f4c95d;
   --red: #e53935;
   --green: #159957;
@@ -92,9 +92,9 @@ section {
 }
 
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 header {
   position: sticky;
@@ -158,9 +158,9 @@ header {
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
   min-height: 680px;
@@ -261,9 +261,9 @@ header {
 }
 
 
-/* =========================
-   QUICK FILTER
-========================= */
+/* =========================================================
+   FILTER BAR
+========================================================= */
 
 .quick-nav {
   background: white;
@@ -301,9 +301,9 @@ header {
 }
 
 
-/* =========================
+/* =========================================================
    SEARCH
-========================= */
+========================================================= */
 
 .search-area {
   background: white;
@@ -331,9 +331,9 @@ header {
 }
 
 
-/* =========================
-   FEATURED VIDEO
-========================= */
+/* =========================================================
+   FEATURED YOUTUBE
+========================================================= */
 
 .featured {
   background: var(--light);
@@ -348,21 +348,30 @@ header {
   margin: auto;
 }
 
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  overflow: hidden;
-  border-radius: 15px;
-  background: #101010;
+.youtube-banner {
+  background:
+    linear-gradient(135deg, #071a33, #123e70);
+  border-radius: 18px;
+  padding: 70px 25px;
+  text-align: center;
+  color: white;
 }
 
-.video-wrapper iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+.youtube-icon {
+  font-size: 68px;
+  margin-bottom: 15px;
+}
+
+.youtube-banner h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.youtube-banner p {
+  max-width: 650px;
+  margin: 0 auto 25px;
+  color: #dce6f2;
+  font-size: 17px;
 }
 
 .video-caption {
@@ -380,9 +389,9 @@ header {
 }
 
 
-/* =========================
+/* =========================================================
    RESOURCE CARDS
-========================= */
+========================================================= */
 
 .resources {
   background: white;
@@ -435,9 +444,9 @@ header {
 }
 
 
-/* =========================
+/* =========================================================
    CURRENT AFFAIRS
-========================= */
+========================================================= */
 
 .current {
   background: #edf4fb;
@@ -450,9 +459,9 @@ header {
 }
 
 
-/* =========================
+/* =========================================================
    ABOUT
-========================= */
+========================================================= */
 
 .about {
   background: white;
@@ -489,9 +498,9 @@ header {
 }
 
 
-/* =========================
+/* =========================================================
    YOUTUBE CTA
-========================= */
+========================================================= */
 
 .youtube-cta {
   background: linear-gradient(135deg, #071a33, #123e70);
@@ -511,9 +520,9 @@ header {
 }
 
 
-/* =========================
+/* =========================================================
    FAQ
-========================= */
+========================================================= */
 
 .faq {
   background: var(--light);
@@ -544,9 +553,9 @@ details p {
 }
 
 
-/* =========================
+/* =========================================================
    SOCIAL
-========================= */
+========================================================= */
 
 .connect {
   background: white;
@@ -572,9 +581,9 @@ details p {
 }
 
 
-/* =========================
+/* =========================================================
    CONTACT
-========================= */
+========================================================= */
 
 .contact {
   background: #edf4fb;
@@ -616,9 +625,9 @@ details p {
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer {
   background: #041329;
@@ -680,9 +689,9 @@ footer h2 {
 }
 
 
-/* =========================
+/* =========================================================
    NO RESULTS
-========================= */
+========================================================= */
 
 .no-results {
   display: none;
@@ -692,9 +701,9 @@ footer h2 {
 }
 
 
-/* =========================
+/* =========================================================
    RESPONSIVE
-========================= */
+========================================================= */
 
 @media (max-width: 1000px) {
 
@@ -761,6 +770,15 @@ footer h2 {
   .contact-box {
     padding: 24px;
   }
+
+  .youtube-banner {
+    padding: 50px 20px;
+  }
+
+  .youtube-banner h3 {
+    font-size: 25px;
+  }
+
 }
 
 </style>
@@ -770,9 +788,9 @@ footer h2 {
 <body>
 
 
-<!-- =========================
+<!-- =========================================================
      HEADER
-========================= -->
+========================================================= -->
 
 <header>
 
@@ -786,15 +804,21 @@ footer h2 {
     <nav class="nav-links">
 
       <a href="#home">Home</a>
+
       <a href="#about">About</a>
+
       <a href="#resources">Resources</a>
+
       <a href="#current">Current Affairs</a>
+
       <a href="#youtube">YouTube</a>
+
       <a href="#connect">Connect</a>
 
       <a
         href="https://t.me/hp12023"
         target="_blank"
+        rel="noopener noreferrer"
         class="nav-telegram">
         Join Telegram
       </a>
@@ -806,9 +830,9 @@ footer h2 {
 </header>
 
 
-<!-- =========================
+<!-- =========================================================
      HERO
-========================= -->
+========================================================= -->
 
 <section class="hero" id="home">
 
@@ -833,13 +857,16 @@ footer h2 {
 
     <div class="hero-buttons">
 
-      <a href="#resources" class="btn btn-gold">
+      <a
+        href="#resources"
+        class="btn btn-gold">
         📚 Explore Resources
       </a>
 
       <a
         href="https://www.youtube.com/@himalayanpathshala"
         target="_blank"
+        rel="noopener noreferrer"
         class="btn btn-youtube">
         ▶ Watch on YouTube
       </a>
@@ -847,6 +874,7 @@ footer h2 {
       <a
         href="https://t.me/hp12023"
         target="_blank"
+        rel="noopener noreferrer"
         class="btn btn-telegram">
         📲 Join Telegram
       </a>
@@ -858,9 +886,9 @@ footer h2 {
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      FILTER BAR
-========================= -->
+========================================================= -->
 
 <div class="quick-nav">
 
@@ -868,27 +896,39 @@ footer h2 {
 
     <div class="filter-bar">
 
-      <button class="filter-btn active" data-filter="all">
+      <button
+        class="filter-btn active"
+        data-filter="all">
         All
       </button>
 
-      <button class="filter-btn" data-filter="class9">
+      <button
+        class="filter-btn"
+        data-filter="class9">
         Class 9
       </button>
 
-      <button class="filter-btn" data-filter="class10">
+      <button
+        class="filter-btn"
+        data-filter="class10">
         Class 10
       </button>
 
-      <button class="filter-btn" data-filter="science">
+      <button
+        class="filter-btn"
+        data-filter="science">
         Science
       </button>
 
-      <button class="filter-btn" data-filter="maths">
+      <button
+        class="filter-btn"
+        data-filter="maths">
         Maths
       </button>
 
-      <button class="filter-btn" data-filter="current">
+      <button
+        class="filter-btn"
+        data-filter="current">
         Current Affairs
       </button>
 
@@ -899,9 +939,9 @@ footer h2 {
 </div>
 
 
-<!-- =========================
+<!-- =========================================================
      SEARCH
-========================= -->
+========================================================= -->
 
 <section class="search-area">
 
@@ -922,9 +962,9 @@ footer h2 {
 </section>
 
 
-<!-- =========================
-     FEATURED VIDEO
-========================= -->
+<!-- =========================================================
+     YOUTUBE
+========================================================= -->
 
 <section class="featured" id="youtube">
 
@@ -932,37 +972,61 @@ footer h2 {
 
     <div class="section-heading">
 
-      <div class="eyebrow">Watch & Learn</div>
+      <div class="eyebrow">
+        Watch & Learn
+      </div>
 
-      <h2>Featured Lecture</h2>
+      <h2>
+        Himalayan PathShala on YouTube
+      </h2>
 
       <p>
-        Learn through our educational videos and explanations.
+        Watch educational videos, current affairs,
+        explanations and preparation content.
       </p>
 
     </div>
 
+
     <div class="video-card">
 
-      <div class="video-wrapper">
+      <div class="youtube-banner">
 
-        <!-- Replace VIDEO_ID with your actual YouTube video ID -->
+        <div class="youtube-icon">
+          ▶️
+        </div>
 
-        <iframe
-          src="https://www.youtube.com/embed?listType=user_uploads&list=himalayanpathshala"
-          title="Himalayan PathShala YouTube Videos"
-          allowfullscreen>
-        </iframe>
+        <h3>
+          Himalayan PathShala
+        </h3>
+
+        <p>
+          Explore our educational videos, current affairs,
+          learning resources and preparation content.
+        </p>
+
+        <a
+          href="https://www.youtube.com/@himalayanpathshala"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-youtube">
+
+          ▶ Visit YouTube Channel
+
+        </a>
 
       </div>
 
+
       <div class="video-caption">
 
-        <h3>Himalayan PathShala on YouTube</h3>
+        <h3>
+          Learn With Himalayan PathShala
+        </h3>
 
         <p>
-          Watch educational videos, current affairs,
-          explanations and preparation content.
+          Follow our YouTube channel for new educational
+          videos and learning content.
         </p>
 
       </div>
@@ -974,9 +1038,9 @@ footer h2 {
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      RESOURCES
-========================= -->
+========================================================= -->
 
 <section class="resources" id="resources">
 
@@ -984,9 +1048,13 @@ footer h2 {
 
     <div class="section-heading">
 
-      <div class="eyebrow">Learn & Prepare</div>
+      <div class="eyebrow">
+        Learn & Prepare
+      </div>
 
-      <h2>Study Resources</h2>
+      <h2>
+        Study Resources
+      </h2>
 
       <p>
         Explore learning resources and preparation content.
@@ -1002,16 +1070,24 @@ footer h2 {
         class="card resource-card"
         data-category="class9 science">
 
-        <div class="card-icon">🔬</div>
+        <div class="card-icon">
+          🔬
+        </div>
 
-        <h3>Class 9 Science</h3>
+        <h3>
+          Class 9 Science
+        </h3>
 
         <p>
           Build strong fundamentals in science
           through simple explanations.
         </p>
 
-        <a href="#youtube" class="card-button">
+        <a
+          href="https://www.youtube.com/@himalayanpathshala"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card-button">
           Explore
         </a>
 
@@ -1022,16 +1098,24 @@ footer h2 {
         class="card resource-card"
         data-category="class9 maths">
 
-        <div class="card-icon">📐</div>
+        <div class="card-icon">
+          📐
+        </div>
 
-        <h3>Class 9 Mathematics</h3>
+        <h3>
+          Class 9 Mathematics
+        </h3>
 
         <p>
           Learn mathematical concepts,
           problem solving and practice.
         </p>
 
-        <a href="#youtube" class="card-button">
+        <a
+          href="https://www.youtube.com/@himalayanpathshala"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card-button">
           Explore
         </a>
 
@@ -1042,16 +1126,24 @@ footer h2 {
         class="card resource-card"
         data-category="class10 science">
 
-        <div class="card-icon">🧪</div>
+        <div class="card-icon">
+          🧪
+        </div>
 
-        <h3>Class 10 Science</h3>
+        <h3>
+          Class 10 Science
+        </h3>
 
         <p>
           Strengthen Physics, Chemistry
           and Biology concepts.
         </p>
 
-        <a href="#youtube" class="card-button">
+        <a
+          href="https://www.youtube.com/@himalayanpathshala"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card-button">
           Explore
         </a>
 
@@ -1062,16 +1154,24 @@ footer h2 {
         class="card resource-card"
         data-category="class10 maths">
 
-        <div class="card-icon">🔢</div>
+        <div class="card-icon">
+          🔢
+        </div>
 
-        <h3>Class 10 Mathematics</h3>
+        <h3>
+          Class 10 Mathematics
+        </h3>
 
         <p>
           Concepts, practice questions
           and examination preparation.
         </p>
 
-        <a href="#youtube" class="card-button">
+        <a
+          href="https://www.youtube.com/@himalayanpathshala"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card-button">
           Explore
         </a>
 
@@ -1082,16 +1182,22 @@ footer h2 {
         class="card resource-card"
         data-category="current">
 
-        <div class="card-icon">📰</div>
+        <div class="card-icon">
+          📰
+        </div>
 
-        <h3>Current Affairs</h3>
+        <h3>
+          Current Affairs
+        </h3>
 
         <p>
           Important national, international
           and regional developments.
         </p>
 
-        <a href="#current" class="card-button">
+        <a
+          href="#current"
+          class="card-button">
           Explore
         </a>
 
@@ -1102,16 +1208,22 @@ footer h2 {
         class="card resource-card"
         data-category="science">
 
-        <div class="card-icon">🚀</div>
+        <div class="card-icon">
+          🚀
+        </div>
 
-        <h3>Science & Technology</h3>
+        <h3>
+          Science & Technology
+        </h3>
 
         <p>
           Important developments in science,
           technology and innovation.
         </p>
 
-        <a href="#current" class="card-button">
+        <a
+          href="#current"
+          class="card-button">
           Explore
         </a>
 
@@ -1122,16 +1234,22 @@ footer h2 {
         class="card resource-card"
         data-category="current">
 
-        <div class="card-icon">🇮🇳</div>
+        <div class="card-icon">
+          🇮🇳
+        </div>
 
-        <h3>National Affairs</h3>
+        <h3>
+          National Affairs
+        </h3>
 
         <p>
           Important events and developments
           from across India.
         </p>
 
-        <a href="#current" class="card-button">
+        <a
+          href="#current"
+          class="card-button">
           Explore
         </a>
 
@@ -1142,16 +1260,22 @@ footer h2 {
         class="card resource-card"
         data-category="current">
 
-        <div class="card-icon">🌎</div>
+        <div class="card-icon">
+          🌎
+        </div>
 
-        <h3>International Affairs</h3>
+        <h3>
+          International Affairs
+        </h3>
 
         <p>
           Major international events,
           developments and explanations.
         </p>
 
-        <a href="#current" class="card-button">
+        <a
+          href="#current"
+          class="card-button">
           Explore
         </a>
 
@@ -1160,8 +1284,13 @@ footer h2 {
 
     </div>
 
-    <div class="no-results" id="noResults">
+
+    <div
+      class="no-results"
+      id="noResults">
+
       No matching resources found.
+
     </div>
 
   </div>
@@ -1169,9 +1298,9 @@ footer h2 {
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      CURRENT AFFAIRS
-========================= -->
+========================================================= -->
 
 <section class="current" id="current">
 
@@ -1179,9 +1308,13 @@ footer h2 {
 
     <div class="section-heading">
 
-      <div class="eyebrow">Stay Informed</div>
+      <div class="eyebrow">
+        Stay Informed
+      </div>
 
-      <h2>Current Affairs</h2>
+      <h2>
+        Current Affairs
+      </h2>
 
       <p>
         Follow important developments and educational explanations.
@@ -1195,9 +1328,13 @@ footer h2 {
 
       <article class="card">
 
-        <div class="card-icon">🇮🇳</div>
+        <div class="card-icon">
+          🇮🇳
+        </div>
 
-        <h3>National Affairs</h3>
+        <h3>
+          National Affairs
+        </h3>
 
         <p>
           Important developments and events in India.
@@ -1206,6 +1343,7 @@ footer h2 {
         <a
           href="https://www.youtube.com/@himalayanpathshala"
           target="_blank"
+          rel="noopener noreferrer"
           class="card-button">
           Watch Now →
         </a>
@@ -1215,9 +1353,13 @@ footer h2 {
 
       <article class="card">
 
-        <div class="card-icon">🌎</div>
+        <div class="card-icon">
+          🌎
+        </div>
 
-        <h3>International Affairs</h3>
+        <h3>
+          International Affairs
+        </h3>
 
         <p>
           Major global developments and events.
@@ -1226,6 +1368,7 @@ footer h2 {
         <a
           href="https://www.youtube.com/@himalayanpathshala"
           target="_blank"
+          rel="noopener noreferrer"
           class="card-button">
           Watch Now →
         </a>
@@ -1235,9 +1378,13 @@ footer h2 {
 
       <article class="card">
 
-        <div class="card-icon">🏔️</div>
+        <div class="card-icon">
+          🏔️
+        </div>
 
-        <h3>Himachal Pradesh</h3>
+        <h3>
+          Himachal Pradesh
+        </h3>
 
         <p>
           Important updates and educational content
@@ -1247,620 +1394,5 @@ footer h2 {
         <a
           href="https://www.youtube.com/@himalayanpathshala"
           target="_blank"
-          class="card-button">
-          Watch Now →
-        </a>
-
-      </article>
-
-
-      <article class="card">
-
-        <div class="card-icon">🛰️</div>
-
-        <h3>Defence & Technology</h3>
-
-        <p>
-          Defence, science, space and technology updates.
-        </p>
-
-        <a
-          href="https://www.youtube.com/@himalayanpathshala"
-          target="_blank"
-          class="card-button">
-          Watch Now →
-        </a>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section class="about" id="about">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div class="eyebrow">About Us</div>
-
-      <h2>About Himalayan PathShala</h2>
-
-    </div>
-
-
-    <div class="about-content">
-
-      <p>
-        Himalayan PathShala is an educational platform created
-        to provide useful study resources, current affairs,
-        educational videos and preparation content for learners.
-      </p>
-
-
-      <div class="about-points">
-
-        <div class="about-point">
-          <strong>📚 Learning</strong>
-          Educational resources designed to support learning.
-        </div>
-
-        <div class="about-point">
-          <strong>📰 Awareness</strong>
-          Useful current affairs and important developments.
-        </div>
-
-        <div class="about-point">
-          <strong>🎯 Preparation</strong>
-          Content designed to support structured preparation.
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     YOUTUBE CTA
-========================= -->
-
-<section class="youtube-cta">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div class="eyebrow" style="color:#f4c95d;">
-        Himalayan PathShala YouTube
-      </div>
-
-      <h2>
-        Learn With Himalayan PathShala
-      </h2>
-
-    </div>
-
-    <p>
-      Watch educational videos, current affairs,
-      explanations and preparation content.
-    </p>
-
-    <a
-      href="https://www.youtube.com/@himalayanpathshala"
-      target="_blank"
-      class="btn btn-youtube">
-      ▶ Visit YouTube Channel
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FAQ
-========================= -->
-
-<section class="faq">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div class="eyebrow">Help</div>
-
-      <h2>Frequently Asked Questions</h2>
-
-    </div>
-
-
-    <div class="faq-list">
-
-
-      <details>
-
-        <summary>
-          What is Himalayan PathShala?
-        </summary>
-
-        <p>
-          Himalayan PathShala is an educational platform
-          providing learning resources, current affairs,
-          educational videos and preparation content.
-        </p>
-
-      </details>
-
-
-      <details>
-
-        <summary>
-          Is the content available on YouTube?
-        </summary>
-
-        <p>
-          Yes. Educational videos and other learning content
-          are available through the official Himalayan PathShala
-          YouTube channel.
-        </p>
-
-      </details>
-
-
-      <details>
-
-        <summary>
-          Where can I receive updates and study material?
-        </summary>
-
-        <p>
-          You can follow the official Himalayan PathShala
-          Telegram channel for updates and shared resources.
-        </p>
-
-      </details>
-
-
-      <details>
-
-        <summary>
-          How can I contact Himalayan PathShala?
-        </summary>
-
-        <p>
-          You can connect through the official social-media
-          channels listed below.
-        </p>
-
-      </details>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CONNECT
-========================= -->
-
-<section class="connect" id="connect">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div class="eyebrow">Official Channels</div>
-
-      <h2>Stay Connected</h2>
-
-      <p>
-        Follow Himalayan PathShala on our official platforms.
-      </p>
-
-    </div>
-
-
-    <div class="social-grid">
-
-
-      <article class="card social-card">
-
-        <div class="social-icon">📸</div>
-
-        <h3>Instagram</h3>
-
-        <p>
-          Follow Himalayan PathShala for educational
-          updates and announcements.
-        </p>
-
-        <a
-          href="https://www.instagram.com/himalyan_pathshala"
-          target="_blank"
-          class="card-button">
-          Follow Instagram
-        </a>
-
-      </article>
-
-
-      <article class="card social-card">
-
-        <div class="social-icon">📲</div>
-
-        <h3>Telegram</h3>
-
-        <p>
-          Join our official Telegram channel for
-          updates and resources.
-        </p>
-
-        <a
-          href="https://t.me/hp12023"
-          target="_blank"
-          class="card-button">
-          Join Telegram
-        </a>
-
-      </article>
-
-
-      <article class="card social-card">
-
-        <div class="social-icon">f</div>
-
-        <h3>Facebook</h3>
-
-        <p>
-          Follow our official Facebook page for
-          educational updates.
-        </p>
-
-        <a
-          href="https://www.facebook.com/share/1DNyF5fS8F/"
-          target="_blank"
-          class="card-button">
-          Follow Facebook
-        </a>
-
-      </article>
-
-
-      <article class="card social-card">
-
-        <div class="social-icon">▶</div>
-
-        <h3>YouTube</h3>
-
-        <p>
-          Watch educational videos and
-          current affairs content.
-        </p>
-
-        <a
-          href="https://www.youtube.com/@himalayanpathshala"
-          target="_blank"
-          class="card-button">
-          Visit YouTube
-        </a>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section class="contact">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div class="eyebrow">Get In Touch</div>
-
-      <h2>Contact Himalayan PathShala</h2>
-
-      <p>
-        Send us your question or feedback.
-      </p>
-
-    </div>
-
-
-    <div class="contact-box">
-
-      <form id="contactForm">
-
-        <div class="form-group">
-
-          <label for="name">
-            Name
-          </label>
-
-          <input
-            type="text"
-            id="name"
-            required
-            placeholder="Your name">
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="email">
-            Email
-          </label>
-
-          <input
-            type="email"
-            id="email"
-            required
-            placeholder="Your email">
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="message">
-            Message
-          </label>
-
-          <textarea
-            id="message"
-            rows="5"
-            required
-            placeholder="Write your message..."></textarea>
-
-        </div>
-
-
-        <button
-          type="submit"
-          class="btn btn-gold">
-
-          Send Message
-
-        </button>
-
-      </form>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-  <div class="container">
-
-    <h2>
-      🏔️ HIMALAYAN PATHSHALA
-    </h2>
-
-    <p class="footer-tagline">
-      Learn • Prepare • Succeed
-    </p>
-
-
-    <div class="footer-links">
-
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#resources">Resources</a>
-      <a href="#current">Current Affairs</a>
-      <a href="#youtube">YouTube</a>
-      <a href="#connect">Connect</a>
-
-    </div>
-
-
-    <div class="footer-social">
-
-      <a
-        href="https://www.instagram.com/himalyan_pathshala"
-        target="_blank"
-        aria-label="Instagram">
-        IG
-      </a>
-
-      <a
-        href="https://t.me/hp12023"
-        target="_blank"
-        aria-label="Telegram">
-        TG
-      </a>
-
-      <a
-        href="https://www.facebook.com/share/1DNyF5fS8F/"
-        target="_blank"
-        aria-label="Facebook">
-        f
-      </a>
-
-      <a
-        href="https://www.youtube.com/@himalayanpathshala"
-        target="_blank"
-        aria-label="YouTube">
-        ▶
-      </a>
-
-    </div>
-
-
-    <div class="copyright">
-
-      © 2026 Himalayan PathShala.
-      All Rights Reserved.
-
-    </div>
-
-  </div>
-
-</footer>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
-
-/* =========================
-   FILTER + SEARCH
-========================= */
-
-const filterButtons =
-  document.querySelectorAll(".filter-btn");
-
-const resourceCards =
-  document.querySelectorAll(".resource-card");
-
-const searchInput =
-  document.getElementById("searchInput");
-
-const noResults =
-  document.getElementById("noResults");
-
-let activeFilter = "all";
-
-
-function updateResources() {
-
-  const searchTerm =
-    searchInput.value.toLowerCase().trim();
-
-  let visibleCount = 0;
-
-
-  resourceCards.forEach(card => {
-
-    const category =
-      card.dataset.category.toLowerCase();
-
-    const content =
-      card.textContent.toLowerCase();
-
-
-    const matchesFilter =
-      activeFilter === "all" ||
-      category.includes(activeFilter);
-
-
-    const matchesSearch =
-      content.includes(searchTerm);
-
-
-    if (matchesFilter && matchesSearch) {
-
-      card.style.display = "";
-
-      visibleCount++;
-
-    } else {
-
-      card.style.display = "none";
-
-    }
-
-  });
-
-
-  noResults.style.display =
-    visibleCount === 0 ? "block" : "none";
-
-}
-
-
-/* FILTER BUTTONS */
-
-filterButtons.forEach(button => {
-
-  button.addEventListener("click", () => {
-
-    filterButtons.forEach(btn => {
-      btn.classList.remove("active");
-    });
-
-    button.classList.add("active");
-
-    activeFilter =
-      button.dataset.filter;
-
-    updateResources();
-
-  });
-
-});
-
-
-/* SEARCH */
-
-searchInput.addEventListener(
-  "input",
-  updateResources
-);
-
-
-/* =========================
-   CONTACT FORM
-========================= */
-
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    alert(
-      "Thank you for contacting Himalayan PathShala! " +
-      "We will get back to you soon."
-    );
-
-    this.reset();
-
-  });
-
-
-/* =========================
-   INITIAL LOAD
-========================= */
-
-updateResources();
-
-</script>
-
-</body>
-</html>
+          rel="noopene
 ```
