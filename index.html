@@ -1,9 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#09284c">
 <title>Himalayan PathShala — Learning Hub</title>
+<meta name="description" content="Prepare for HPPSC, HPRCA, HPAS, engineering exams and Himachal Pradesh competitive examinations with Himalayan PathShala.">
 
 <style>
 :root {
@@ -15,10 +18,15 @@
   --green: #176b45;
   --green-light: #e4f4e9;
   --gold: #e8b44f;
+  --navy: #09284c;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -34,6 +42,14 @@ button, input, select, textarea {
 
 button {
   cursor: pointer;
+}
+
+a {
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+a:hover {
+  opacity: .85;
 }
 
 .nav {
@@ -91,6 +107,12 @@ button {
   font-weight: bold;
   display: inline-block;
   text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px #00000012;
 }
 
 .primary {
@@ -118,7 +140,7 @@ button {
   padding: 65px 7%;
   background: linear-gradient(135deg, #e4f4e9, #f7f8f4);
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.2fr .8fr;
   gap: 30px;
   align-items: center;
 }
@@ -161,19 +183,35 @@ button {
   font-size: 12px;
 }
 
-/* Animated hero banner: subtle cinematic motion, shine, and accessible reduced-motion support */
+/* Animated Himalayan PathShala banner */
+
 .hero-banner {
   position: relative;
   isolation: isolate;
   width: 100%;
   overflow: hidden;
-  border: 1px solid rgba(232,180,79,.55);
+  border: 1px solid rgba(232, 180, 79, .65);
   border-radius: 18px;
-  background: #09284c;
-  box-shadow: 0 18px 46px #06264b35, 0 0 0 1px #ffffff55 inset;
+  background: var(--navy);
+  box-shadow:
+    0 18px 46px #06264b35,
+    0 0 0 1px #ffffff55 inset;
   transform: translateZ(0);
   animation: bannerFloat 7s ease-in-out infinite;
 }
+
+.hero-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transform: scale(1.015);
+  animation: bannerKenBurns 24s ease-in-out infinite alternate;
+}
+
+/* Light sweep */
+
 .hero-banner::after {
   content: "";
   position: absolute;
@@ -181,35 +219,53 @@ button {
   width: 38%;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(105deg, transparent, rgba(255,255,255,.20), transparent);
+  background: linear-gradient(
+    105deg,
+    transparent,
+    rgba(255, 255, 255, .22),
+    transparent
+  );
   transform: skewX(-18deg);
   animation: bannerShine 8s ease-in-out infinite;
 }
-.hero-banner img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  object-fit: cover;
-  transform: scale(1.015);
-  animation: bannerKenBurns 24s ease-in-out infinite alternate;
-}
+
 @keyframes bannerFloat {
-  0%, 100% { box-shadow: 0 18px 46px #06264b35, 0 0 0 1px #ffffff55 inset; }
-  50% { box-shadow: 0 24px 58px #06264b48, 0 0 24px #e8b44f24; }
+  0%, 100% {
+    box-shadow:
+      0 18px 46px #06264b35,
+      0 0 0 1px #ffffff55 inset;
+  }
+
+  50% {
+    box-shadow:
+      0 24px 58px #06264b48,
+      0 0 24px #e8b44f24;
+  }
 }
+
 @keyframes bannerKenBurns {
-  from { transform: scale(1.015) translate3d(0, 0, 0); }
-  to { transform: scale(1.07) translate3d(-.5%, -.3%, 0); }
+  from {
+    transform: scale(1.015) translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: scale(1.07) translate3d(-.5%, -.3%, 0);
+  }
 }
+
 @keyframes bannerShine {
-  0%, 55%, 100% { left: -70%; opacity: 0; }
-  62% { opacity: 1; }
-  78% { left: 135%; opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-banner, .hero-banner img, .hero-banner::after {
-    animation: none !important;
+  0%, 55%, 100% {
+    left: -70%;
+    opacity: 0;
+  }
+
+  62% {
+    opacity: 1;
+  }
+
+  78% {
+    left: 135%;
+    opacity: 0;
   }
 }
 
@@ -330,6 +386,7 @@ button {
   color: var(--muted);
   border: 1px dashed var(--line);
   border-radius: 12px;
+  grid-column: 1 / -1;
 }
 
 .banner {
@@ -354,7 +411,12 @@ button {
   font-size: 12px;
 }
 
+.footer a {
+  color: var(--green);
+}
+
 /* Admin dashboard */
+
 .adminwrap {
   display: none;
   padding: 30px 5%;
@@ -454,6 +516,8 @@ th, td {
   background: white;
   border-radius: 18px;
   padding: 25px;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .previewbox {
@@ -477,13 +541,23 @@ th, td {
   color: white;
   padding: 13px 17px;
   border-radius: 10px;
+  max-width: calc(100% - 36px);
 }
 
 .toast.show {
   display: block;
 }
 
-@media(max-width: 850px) {
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #e8b44f;
+  outline-offset: 3px;
+}
+
+@media (max-width: 850px) {
   .hero {
     grid-template-columns: 1fr;
   }
@@ -501,7 +575,7 @@ th, td {
   }
 }
 
-@media(max-width: 560px) {
+@media (max-width: 560px) {
   .grid,
   .formgrid {
     grid-template-columns: 1fr;
@@ -519,6 +593,38 @@ th, td {
   .section {
     padding: 30px 5%;
   }
+
+  .nav {
+    padding: 10px 4%;
+  }
+
+  .brand {
+    font-size: 13px;
+  }
+
+  .brand small {
+    font-size: 9px;
+  }
+
+  .nav > .btn {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-banner,
+  .hero-banner img,
+  .hero-banner::after,
+  .btn,
+  a {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 </style>
 </head>
@@ -534,18 +640,21 @@ th, td {
     </div>
   </div>
 
-  <nav class="navlinks">
+  <nav class="navlinks" aria-label="Main navigation">
     <a href="#courses">Courses</a>
     <a href="#resources">Study Material</a>
     <a href="#videos">Video Lessons</a>
     <a href="#tests">Practice Tests</a>
   </nav>
 
-  <button class="btn primary" id="adminOpen">Admin Login</button>
+  <button class="btn primary" id="adminOpen" type="button">
+    Admin Login
+  </button>
 </header>
 
 <main id="publicSite">
 
+  <!-- HERO -->
   <section class="hero">
     <div>
       <span class="pill">Made for Himachal exam aspirants</span>
@@ -570,10 +679,12 @@ th, td {
           <strong>HP GK</strong>
           <span>Zero to Infinity</span>
         </div>
+
         <div class="stat">
           <strong>PYQs</strong>
           <span>Exam-focused practice</span>
         </div>
+
         <div class="stat">
           <strong>Free + Premium</strong>
           <span>Choose your path</span>
@@ -581,15 +692,18 @@ th, td {
       </div>
     </div>
 
-    <!-- Replace the filename with your actual banner filename -->
+    <!-- Keep the banner image beside this HTML file -->
     <div class="hero-banner">
       <img
         src="Himalayan_Pathshala_Banner.jpg"
-        alt="Himalayan PathShala banner featuring the Himalayas, exam preparation subjects and study resources" loading="eager" fetchpriority="high"
+        alt="Himalayan PathShala educational banner for Himachal Pradesh competitive exams"
+        loading="eager"
+        fetchpriority="high"
       >
     </div>
   </section>
 
+  <!-- COURSES -->
   <section class="section" id="courses">
     <h2>Choose your preparation path</h2>
     <p class="section-intro">
@@ -617,7 +731,7 @@ th, td {
 
       <article class="card">
         <span class="pill gold">Practice</span>
-        <h3>Exam Practice & Mock Tests</h3>
+        <h3>Exam Practice &amp; Mock Tests</h3>
         <p>
           Topic quizzes, previous-year questions and timed tests.
         </p>
@@ -626,6 +740,7 @@ th, td {
     </div>
   </section>
 
+  <!-- RESOURCE LIBRARY -->
   <section class="section" id="resources">
     <h2>Study material library</h2>
     <p class="section-intro">
@@ -633,16 +748,21 @@ th, td {
     </p>
 
     <div class="resourcebar">
-      <input id="searchResource" placeholder="Search resources...">
+      <input
+        id="searchResource"
+        type="search"
+        placeholder="Search resources..."
+        aria-label="Search study resources"
+      >
 
-      <select id="typeFilter">
+      <select id="typeFilter" aria-label="Filter by format">
         <option value="all">All formats</option>
         <option value="PDF">PDF notes</option>
         <option value="Video">Video lessons</option>
         <option value="Test">Practice tests</option>
       </select>
 
-      <select id="accessFilter">
+      <select id="accessFilter" aria-label="Filter by access">
         <option value="all">Free + Premium</option>
         <option value="Free">Free access</option>
         <option value="Premium">Premium access</option>
@@ -652,6 +772,7 @@ th, td {
     <div class="grid" id="resourceGrid"></div>
   </section>
 
+  <!-- VIDEO LESSONS -->
   <section class="section" id="videos">
     <div class="banner">
       <div>
@@ -670,6 +791,7 @@ th, td {
     </div>
   </section>
 
+  <!-- DEMO QUIZ -->
   <section class="section" id="tests">
     <h2>Try a quick demo test</h2>
 
@@ -681,13 +803,25 @@ th, td {
       </h3>
 
       <div id="quizChoices" style="display:grid;gap:9px;margin:15px 0">
-        <button class="btn outline" data-answer="a">A. Shilla</button>
-        <button class="btn outline" data-answer="b">B. Reo Purgyil</button>
-        <button class="btn outline" data-answer="c">C. Hanuman Tibba</button>
-        <button class="btn outline" data-answer="d">D. Deo Tibba</button>
+        <button class="btn outline" data-answer="a" type="button">
+          A. Shilla
+        </button>
+        <button class="btn outline" data-answer="b" type="button">
+          B. Reo Purgyil
+        </button>
+        <button class="btn outline" data-answer="c" type="button">
+          C. Hanuman Tibba
+        </button>
+        <button class="btn outline" data-answer="d" type="button">
+          D. Deo Tibba
+        </button>
       </div>
 
-      <div id="quizResult" class="previewbox hidden"></div>
+      <div
+        id="quizResult"
+        class="previewbox hidden"
+        aria-live="polite"
+      ></div>
     </div>
   </section>
 
@@ -697,6 +831,7 @@ th, td {
 <section id="adminArea" class="adminwrap">
 
   <h2>Himalayan PathShala Admin</h2>
+
   <p class="muted">
     Manage resources and configure free or premium access.
   </p>
@@ -709,25 +844,26 @@ th, td {
   <div class="adminlayout" style="margin-top:20px">
 
     <aside class="card side">
-      <button class="btn secondary" data-panel="uploadPanel">
+      <button class="btn secondary" data-panel="uploadPanel" type="button">
         Add Resource
       </button>
 
-      <button class="btn outline" data-panel="libraryPanel">
+      <button class="btn outline" data-panel="libraryPanel" type="button">
         Resource Library
       </button>
 
-      <button class="btn outline" data-panel="accessPanel">
+      <button class="btn outline" data-panel="accessPanel" type="button">
         Access Settings
       </button>
 
-      <button class="btn outline" id="adminLogout">
+      <button class="btn outline" id="adminLogout" type="button">
         Log Out
       </button>
     </aside>
 
     <div>
 
+      <!-- ADD RESOURCE -->
       <div class="card adminpanel active" id="uploadPanel">
         <h3>Add PDF, Video or Test</h3>
 
@@ -771,7 +907,12 @@ th, td {
 
             <div class="field">
               <label for="resPrice">Price (₹)</label>
-              <input id="resPrice" type="number" min="0" value="0">
+              <input
+                id="resPrice"
+                type="number"
+                min="0"
+                value="0"
+              >
             </div>
 
             <div class="field">
@@ -798,12 +939,17 @@ th, td {
             >
             <div class="drop">
               Selecting a file here does not upload it to a server.
+              Use a hosted URL below to link to an existing resource.
             </div>
           </div>
 
           <div class="field">
             <label for="resLink">Hosted resource URL</label>
-            <input id="resLink" type="url" placeholder="https://...">
+            <input
+              id="resLink"
+              type="url"
+              placeholder="https://..."
+            >
           </div>
 
           <button class="btn primary" type="submit">
@@ -812,6 +958,7 @@ th, td {
         </form>
       </div>
 
+      <!-- RESOURCE MANAGEMENT -->
       <div class="card adminpanel" id="libraryPanel">
         <h3>Resource Library</h3>
 
@@ -830,6 +977,7 @@ th, td {
         </div>
       </div>
 
+      <!-- ACCESS SETTINGS -->
       <div class="card adminpanel" id="accessPanel">
         <h3>Access Settings</h3>
 
@@ -857,6 +1005,7 @@ th, td {
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div>
     <strong>Himalayan PathShala</strong><br>
@@ -865,7 +1014,11 @@ th, td {
 
   <div>
     Educational resources for Himachal Pradesh competitive exams.<br>
-    <a href="https://youtube.com/@himalayanpathshala">
+    <a
+      href="https://youtube.com/@himalayanpathshala"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       YouTube @himalayanpathshala
     </a>
   </div>
@@ -873,16 +1026,26 @@ th, td {
   <div>© 2026 Himalayan PathShala</div>
 </footer>
 
-<!-- LOGIN MODAL -->
-<div class="modalbg" id="loginModal">
+<!-- ADMIN LOGIN MODAL -->
+<div
+  class="modalbg"
+  id="loginModal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="loginTitle"
+>
   <div class="modal">
-    <h2>Administrator Login</h2>
+    <h2 id="loginTitle">Administrator Login</h2>
     <p class="muted">Prototype credentials only.</p>
 
     <form id="loginForm">
       <div class="field">
         <label for="adminUser">Username</label>
-        <input id="adminUser" required autocomplete="username">
+        <input
+          id="adminUser"
+          required
+          autocomplete="username"
+        >
       </div>
 
       <div class="field">
@@ -895,8 +1058,15 @@ th, td {
         >
       </div>
 
-      <button class="btn primary" type="submit">Sign In</button>
-      <button class="btn outline" type="button" id="loginClose">
+      <button class="btn primary" type="submit">
+        Sign In
+      </button>
+
+      <button
+        class="btn outline"
+        type="button"
+        id="loginClose"
+      >
         Cancel
       </button>
     </form>
@@ -908,9 +1078,12 @@ th, td {
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
+"use strict";
+
+/* Initial example resources */
 const initialResources = [
   {
     id: 1,
@@ -967,15 +1140,18 @@ let nextId = 5;
 
 const $ = id => document.getElementById(id);
 
+/* Show a small status message */
 function toast(message) {
-  $("toast").textContent = message;
-  $("toast").classList.add("show");
+  const element = $("toast");
+  element.textContent = message;
+  element.classList.add("show");
 
-  setTimeout(() => {
-    $("toast").classList.remove("show");
+  window.setTimeout(() => {
+    element.classList.remove("show");
   }, 2500);
 }
 
+/* Escape HTML before inserting user-provided text */
 function escapeHTML(value = "") {
   return String(value).replace(/[&<>"']/g, character => ({
     "&": "&amp;",
@@ -986,8 +1162,9 @@ function escapeHTML(value = "") {
   })[character]);
 }
 
+/* Render searchable resources */
 function renderResources() {
-  const query = $("searchResource").value.toLowerCase();
+  const query = $("searchResource").value.trim().toLowerCase();
   const type = $("typeFilter").value;
   const access = $("accessFilter").value;
 
@@ -1009,10 +1186,16 @@ function renderResources() {
         <span class="pill ${
           resource.access === "Premium" ? "gold" : ""
         }">
-          ${resource.access.toUpperCase()}
+          ${escapeHTML(resource.access.toUpperCase())}
         </span>
 
-        <span class="pill">${escapeHTML(resource.type)}</span>
+        <span class="pill">
+          ${escapeHTML(resource.type)}
+        </span>
+
+        <span class="pill">
+          ${escapeHTML(resource.exam)}
+        </span>
       </div>
 
       <h3>${escapeHTML(resource.title)}</h3>
@@ -1029,6 +1212,7 @@ function renderResources() {
           class="btn ${
             resource.access === "Premium" ? "primary" : "secondary"
           } small"
+          type="button"
           onclick="openResource(${resource.id})"
         >
           ${
@@ -1046,6 +1230,7 @@ function renderResources() {
   `;
 }
 
+/* Render admin resource table */
 function renderAdmin() {
   $("adminRows").innerHTML = resources.map(resource => `
     <tr>
@@ -1058,6 +1243,7 @@ function renderAdmin() {
       <td>
         <button
           class="btn outline small"
+          type="button"
           onclick="toggleAccess(${resource.id})"
         >
           Change Access
@@ -1065,6 +1251,7 @@ function renderAdmin() {
 
         <button
           class="btn outline small"
+          type="button"
           onclick="removeResource(${resource.id})"
         >
           Remove
@@ -1074,6 +1261,7 @@ function renderAdmin() {
   `).join("");
 }
 
+/* Open free resources or show premium status */
 function openResource(id) {
   const resource = resources.find(item => item.id === id);
 
@@ -1085,12 +1273,17 @@ function openResource(id) {
   }
 
   if (resource.url) {
-    window.open(resource.url, "_blank", "noopener,noreferrer");
+    const link = document.createElement("a");
+    link.href = resource.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.click();
   } else {
     toast("Add a hosted file URL to enable access.");
   }
 }
 
+/* Demo-only access change */
 function toggleAccess(id) {
   const resource = resources.find(item => item.id === id);
 
@@ -1110,7 +1303,18 @@ function toggleAccess(id) {
   toast("Access updated in this demo.");
 }
 
+/* Demo-only resource removal */
 function removeResource(id) {
+  const resource = resources.find(item => item.id === id);
+
+  if (!resource) return;
+
+  const confirmed = window.confirm(
+    `Remove "${resource.title}" from this demo library?`
+  );
+
+  if (!confirmed) return;
+
   resources = resources.filter(item => item.id !== id);
 
   renderResources();
@@ -1118,24 +1322,42 @@ function removeResource(id) {
   toast("Resource removed from this demo.");
 }
 
+/* Switch dashboard panels */
 function showPanel(panelId) {
   document.querySelectorAll(".adminpanel").forEach(panel => {
     panel.classList.toggle("active", panel.id === panelId);
   });
 }
 
+/* Open and close login modal */
 $("adminOpen").onclick = () => {
   $("loginModal").classList.add("show");
+  $("adminUser").focus();
 };
 
 $("loginClose").onclick = () => {
   $("loginModal").classList.remove("show");
 };
 
+$("loginModal").addEventListener("click", event => {
+  if (event.target === $("loginModal")) {
+    $("loginModal").classList.remove("show");
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    $("loginModal").classList.remove("show");
+  }
+});
+
+/*
+  DEMO LOGIN ONLY.
+  Never use client-side credentials for a live website.
+*/
 $("loginForm").onsubmit = event => {
   event.preventDefault();
 
-  // DEMO LOGIN ONLY — NOT SECURE FOR A LIVE WEBSITE.
   if (
     $("adminUser").value === "admin" &&
     $("adminPass").value === "Demo@12345"
@@ -1153,6 +1375,7 @@ $("loginForm").onsubmit = event => {
   }
 };
 
+/* Log out of demo dashboard */
 $("adminLogout").onclick = () => {
   $("adminArea").classList.remove("show");
   $("publicSite").classList.remove("hidden");
@@ -1164,16 +1387,34 @@ $("adminLogout").onclick = () => {
   window.scrollTo(0, 0);
 };
 
+/* Admin navigation */
 document.querySelectorAll("[data-panel]").forEach(button => {
   button.onclick = () => showPanel(button.dataset.panel);
 });
 
+/* Add a resource to the in-memory demo library */
 $("uploadForm").onsubmit = event => {
   event.preventDefault();
 
   const type = $("resType").value;
   const access = $("resAccess").value;
   const file = $("resFile").files[0];
+
+  const resourceUrl = $("resLink").value.trim();
+
+  if (resourceUrl) {
+    try {
+      const parsedUrl = new URL(resourceUrl);
+
+      if (!["http:", "https:"].includes(parsedUrl.protocol)) {
+        toast("Please enter a valid HTTP or HTTPS URL.");
+        return;
+      }
+    } catch {
+      toast("Please enter a valid resource URL.");
+      return;
+    }
+  }
 
   resources.unshift({
     id: nextId++,
@@ -1186,7 +1427,7 @@ $("uploadForm").onsubmit = event => {
       : Number($("resPrice").value || 0),
     demo: $("resDemo").value,
     desc: $("resDesc").value.trim(),
-    url: $("resLink").value.trim(),
+    url: resourceUrl,
     fileName: file ? file.name : ""
   });
 
@@ -1201,6 +1442,7 @@ $("uploadForm").onsubmit = event => {
   toast("Resource added to this demo only.");
 };
 
+/* Resource search and filters */
 [
   "searchResource",
   "typeFilter",
@@ -1212,6 +1454,7 @@ $("uploadForm").onsubmit = event => {
   );
 });
 
+/* Demo quiz interaction */
 document.querySelectorAll("[data-answer]").forEach(button => {
   button.onclick = () => {
     const correct = button.dataset.answer === "b";
@@ -1221,9 +1464,14 @@ document.querySelectorAll("[data-answer]").forEach(button => {
     $("quizResult").innerHTML = correct
       ? "<strong>Correct!</strong> Reo Purgyil is the expected answer."
       : "<strong>Try again.</strong> The expected answer is Reo Purgyil.";
+
+    document.querySelectorAll("[data-answer]").forEach(option => {
+      option.disabled = true;
+    });
   };
 });
 
+/* Initial page render */
 renderResources();
 </script>
 
