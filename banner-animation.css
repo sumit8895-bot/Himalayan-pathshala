@@ -1,0 +1,33 @@
+/* Himalayan PathShala animated banner effects */
+.hero-banner {
+  position: relative; isolation: isolate; width: 100%; overflow: hidden;
+  border: 1px solid rgba(232,180,79,.55); border-radius: 18px;
+  background: #09284c; box-shadow: 0 18px 46px #06264b35, 0 0 0 1px #ffffff55 inset;
+  transform: translateZ(0); animation: bannerFloat 7s ease-in-out infinite;
+}
+.hero-banner::after {
+  content: ""; position: absolute; inset: -35% auto -35% -70%; width: 38%;
+  z-index: 1; pointer-events: none;
+  background: linear-gradient(105deg, transparent, rgba(255,255,255,.20), transparent);
+  transform: skewX(-18deg); animation: bannerShine 8s ease-in-out infinite;
+}
+.hero-banner img {
+  display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover;
+  transform: scale(1.015); animation: bannerKenBurns 24s ease-in-out infinite alternate;
+}
+@keyframes bannerFloat {
+  0%, 100% { box-shadow: 0 18px 46px #06264b35, 0 0 0 1px #ffffff55 inset; }
+  50% { box-shadow: 0 24px 58px #06264b48, 0 0 24px #e8b44f24; }
+}
+@keyframes bannerKenBurns {
+  from { transform: scale(1.015) translate3d(0, 0, 0); }
+  to { transform: scale(1.07) translate3d(-.5%, -.3%, 0); }
+}
+@keyframes bannerShine {
+  0%, 55%, 100% { left: -70%; opacity: 0; }
+  62% { opacity: 1; }
+  78% { left: 135%; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-banner, .hero-banner img, .hero-banner::after { animation: none !important; }
+}

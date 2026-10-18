@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b315b"/><stop offset="1" stop-color="#062043"/></linearGradient></defs>
+<circle cx="300" cy="300" r="280" fill="#fff" fill-opacity=".94" stroke="url(#g)" stroke-width="18"/>
+<circle cx="300" cy="300" r="252" fill="none" stroke="#e8b323" stroke-width="5"/>
+<path d="M110 260 L190 150 L240 215 L300 120 L375 215 L420 160 L495 260 Z" fill="#1677c8" stroke="#07305b" stroke-width="9" stroke-linejoin="round"/>
+<path d="M190 150 L208 185 L235 179 L240 215 L210 199 L195 205 Z M300 120 L321 170 L350 183 L375 215 L340 199 L319 206 L300 183 L278 205 L260 193 Z M420 160 L435 197 L455 202 L495 260 L450 231 L429 235 Z" fill="#fff"/>
+<path d="M205 270 Q300 235 395 270 L300 320 Z" fill="#e8b323"/>
+<path d="M145 330 Q220 300 300 340 Q380 300 455 330 L455 370 Q380 340 300 380 Q220 340 145 370 Z" fill="#fff" stroke="#082e59" stroke-width="10"/>
+<text x="300" y="420" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="49" fill="#082e59">HIMALAYAN</text>
+<text x="300" y="466" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="39" fill="#082e59">PATHSHALA</text>
+<path d="M155 490 H445" stroke="#e8b323" stroke-width="8" stroke-linecap="round"/>
+<text x="300" y="523" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="bold" fill="#082e59">SHEELAM PARAM BHUSHANAM</text>
+</svg>
