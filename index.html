@@ -1,24 +1,40 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#09284c">
-<title>Himalayan PathShala — Learning Hub</title>
-<meta name="description" content="Prepare for HPPSC, HPRCA, HPAS, engineering exams and Himachal Pradesh competitive examinations with Himalayan PathShala.">
+<meta name="theme-color" content="#071e36">
+
+<link rel="icon" type="image/png" href="Himalayan_Pathshala_Favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<meta name="description" content="Himalayan PathShala — focused preparation for HPPSC, HPRCA, HPAS, JE/AE and Himachal Pradesh competitive examinations.">
+
+<title>Himalayan PathShala | Learn with Purpose</title>
+
+<meta property="og:title" content="Himalayan PathShala | Learn with Purpose">
+<meta property="og:description" content="Structured learning, practice and revision for Himachal Pradesh competitive examinations.">
+<meta property="og:image" content="Himalayan_Pathshala_Logo.webp">
 
 <style>
 :root {
-  --bg: #f7f8f4;
-  --surface: #ffffff;
-  --text: #18251d;
-  --muted: #65736a;
-  --line: #dce5dc;
-  --green: #176b45;
-  --green-light: #e4f4e9;
-  --gold: #e8b44f;
-  --navy: #09284c;
+  --ink: #10243a;
+  --navy: #071e36;
+  --navy2: #0c3155;
+  --blue: #17649b;
+  --gold: #f4bd4f;
+  --gold2: #ffe6a4;
+  --paper: #f7f8f5;
+  --white: #fff;
+  --muted: #68798a;
+  --line: #e0e7ec;
+  --green: #1e7555;
+  --shadow: 0 18px 55px #09243b12;
+  --radius: 22px;
 }
 
 * {
@@ -27,1132 +43,1793 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 92px;
 }
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font: 15px/1.5 Arial, sans-serif;
-}
-
-button, input, select, textarea {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.65 "DM Sans", Manrope, ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 a {
-  transition: opacity .2s ease, transform .2s ease;
+  color: inherit;
+  text-decoration: none;
 }
 
-a:hover {
-  opacity: .85;
+button, input, select {
+  font: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+/* Announcement bar */
+
+.topline {
+  background: var(--navy);
+  color: #d8e7f5;
+  font-size: 12px;
+  padding: 8px 0;
+}
+
+.topline .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.topline strong {
+  color: var(--gold);
+}
+
+/* Header and navigation */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: #ffffffed;
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid #e6ebef;
 }
 
 .nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: white;
-  border-bottom: 1px solid var(--line);
+  height: 78px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 13px 5%;
-  gap: 16px;
+  gap: 24px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 850;
+  gap: 11px;
+  min-width: 0;
 }
 
-.logo {
-  width: 42px;
-  height: 42px;
+.brandmark {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
   border-radius: 50%;
-  background: var(--green);
-  color: white;
-  display: grid;
-  place-items: center;
-  font-size: 21px;
+  background: #fff;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 3px 5px #071e3618);
 }
 
-.brand small {
+.brandname {
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: .01em;
+  line-height: 1.1;
+}
+
+.brandname small {
   display: block;
-  color: var(--muted);
-  font-size: 11px;
+  font: 700 10px/1.6 system-ui, sans-serif;
+  letter-spacing: .18em;
+  color: #9b6d13;
 }
 
 .navlinks {
   display: flex;
-  gap: 18px;
+  align-items: center;
+  gap: 25px;
 }
 
 .navlinks a {
-  color: var(--muted);
-  text-decoration: none;
-  font-weight: bold;
+  font-size: 13px;
+  font-weight: 750;
+  color: #405369;
 }
+
+.navlinks a:hover {
+  color: var(--blue);
+}
+
+.navright {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Buttons */
 
 .btn {
   border: 0;
-  border-radius: 10px;
-  padding: 10px 15px;
-  font-weight: bold;
-  display: inline-block;
-  text-decoration: none;
-  transition: transform .2s ease, box-shadow .2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 12px;
+  padding: 12px 17px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s, background .2s;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 14px #00000012;
 }
 
-.primary {
-  background: var(--green);
+.btn-dark {
+  background: var(--navy);
   color: white;
+  box-shadow: 0 8px 20px #071e3624;
 }
 
-.secondary {
-  background: var(--green-light);
-  color: var(--green);
+.btn-gold {
+  background: var(--gold);
+  color: #182d40;
+  box-shadow: 0 8px 22px #f4bd4f35;
 }
 
-.outline {
-  border: 1px solid var(--line);
+.btn-ghost {
+  border: 1px solid #dbe4ea;
+  background: #fff;
+  color: var(--ink);
+}
+
+.menu-btn {
+  display: none;
   background: white;
-  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 9px 12px;
 }
 
-.small {
-  padding: 7px 10px;
-  font-size: 12px;
+.icon {
+  width: 21px;
+  height: 21px;
+  stroke-width: 1.8;
+  flex: 0 0 auto;
 }
+
+.exam-icon .icon {
+  width: 25px;
+  height: 25px;
+}
+
+.ticker-icon .icon {
+  width: 22px;
+  height: 22px;
+}
+
+.resource-symbol .icon {
+  width: 31px;
+  height: 31px;
+  stroke-width: 1.7;
+}
+
+.float-icon .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.play .icon {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+  stroke-width: 1.5;
+}
+
+/* Hero section */
 
 .hero {
-  padding: 65px 7%;
-  background: linear-gradient(135deg, #e4f4e9, #f7f8f4);
+  padding: 55px 0 38px;
+  background:
+    radial-gradient(ellipse at 70% 10%, #e3edf5 0, transparent 42%),
+    linear-gradient(180deg, #fff 0%, var(--paper) 100%);
+  overflow: hidden;
+}
+
+.hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 30px;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 42px;
   align-items: center;
 }
 
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #f0dca9;
+  background: #fff8e6;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: #795719;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  background: #d69b21;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #f4bd4f30;
+}
+
 .hero h1 {
-  font-size: clamp(36px, 5vw, 60px);
-  line-height: 1.08;
-  margin: 18px 0;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 5.4vw, 70px);
+  letter-spacing: -.045em;
+  line-height: 1.02;
+  margin: 20px 0 18px;
+  color: var(--navy);
 }
 
-.hero h1 span {
-  color: var(--green);
+.hero h1 em {
+  font-weight: 500;
+  color: #b37b13;
 }
 
-.hero p {
-  color: var(--muted);
+.lead {
+  max-width: 540px;
   font-size: 17px;
+  color: #607184;
+  line-height: 1.8;
 }
 
-.heroactions {
+.hero-actions {
   display: flex;
-  gap: 10px;
+  gap: 11px;
   flex-wrap: wrap;
-  margin: 22px 0;
+  margin: 25px 0 24px;
 }
 
-.stats {
+.proof {
   display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.stat strong {
-  display: block;
-  font-size: 20px;
-}
-
-.stat span {
-  color: var(--muted);
+  align-items: center;
+  gap: 13px;
+  color: #6b7b8c;
   font-size: 12px;
 }
 
-/* Animated Himalayan PathShala banner */
+.proofline {
+  height: 1px;
+  width: 36px;
+  background: var(--gold);
+}
+
+.hero-art {
+  position: relative;
+}
 
 .hero-banner {
   position: relative;
   isolation: isolate;
-  width: 100%;
   overflow: hidden;
-  border: 1px solid rgba(232, 180, 79, .65);
-  border-radius: 18px;
+  border-radius: 23px;
+  border: 1px solid #f4d38b;
   background: var(--navy);
-  box-shadow:
-    0 18px 46px #06264b35,
-    0 0 0 1px #ffffff55 inset;
+  box-shadow: 0 30px 80px #071e362b, 0 0 0 7px #fff8;
   transform: translateZ(0);
-  animation: bannerFloat 7s ease-in-out infinite;
 }
 
 .hero-banner img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16/9;
   object-fit: cover;
-  transform: scale(1.015);
-  animation: bannerKenBurns 24s ease-in-out infinite alternate;
+  animation: cinematic 26s ease-in-out infinite alternate;
 }
 
-/* Light sweep */
-
-.hero-banner::after {
+.hero-banner:after {
   content: "";
   position: absolute;
-  inset: -35% auto -35% -70%;
-  width: 38%;
-  z-index: 1;
+  inset: -30% auto -30% -65%;
+  width: 35%;
   pointer-events: none;
-  background: linear-gradient(
-    105deg,
-    transparent,
-    rgba(255, 255, 255, .22),
-    transparent
-  );
-  transform: skewX(-18deg);
-  animation: bannerShine 8s ease-in-out infinite;
+  background: linear-gradient(105deg, transparent, #ffffff3b, transparent);
+  transform: skewX(-17deg);
+  animation: shine 9s ease-in-out infinite;
 }
 
-@keyframes bannerFloat {
-  0%, 100% {
-    box-shadow:
-      0 18px 46px #06264b35,
-      0 0 0 1px #ffffff55 inset;
-  }
-
-  50% {
-    box-shadow:
-      0 24px 58px #06264b48,
-      0 0 24px #e8b44f24;
-  }
-}
-
-@keyframes bannerKenBurns {
-  from {
-    transform: scale(1.015) translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: scale(1.07) translate3d(-.5%, -.3%, 0);
-  }
-}
-
-@keyframes bannerShine {
-  0%, 55%, 100% {
-    left: -70%;
-    opacity: 0;
-  }
-
-  62% {
-    opacity: 1;
-  }
-
-  78% {
-    left: 135%;
-    opacity: 0;
-  }
-}
-
-.section {
-  padding: 45px 6%;
-}
-
-.section h2 {
-  font-size: 30px;
-  margin-bottom: 5px;
-}
-
-.section-intro {
-  color: var(--muted);
-  margin-bottom: 22px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.card {
-  background: var(--surface);
+.float-note {
+  position: absolute;
+  z-index: 2;
+  bottom: -20px;
+  left: -20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
   border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 8px 24px #00000008;
-  min-width: 0;
+  border-radius: 15px;
+  padding: 13px 16px;
+  box-shadow: var(--shadow);
 }
 
-.card h3 {
-  margin: 12px 0 5px;
+.float-icon {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #fff3d5;
+  color: #8d6213;
 }
 
-.card p {
-  color: var(--muted);
+.float-note strong {
+  display: block;
   font-size: 13px;
 }
 
-.pill {
-  display: inline-block;
-  border-radius: 20px;
-  padding: 5px 9px;
+.float-note span {
+  display: block;
   font-size: 11px;
-  font-weight: bold;
-  background: var(--green-light);
-  color: var(--green);
-}
-
-.pill.gold {
-  background: #f8edcf;
-  color: #79520a;
-}
-
-.cardfoot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.price {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.muted {
   color: var(--muted);
 }
 
-.resourcebar {
+.hero-number {
+  position: absolute;
+  right: -13px;
+  top: -18px;
+  background: var(--navy);
+  color: #fff;
+  padding: 13px 16px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  font-size: 11px;
+  letter-spacing: .06em;
+}
+
+.hero-number b {
+  color: var(--gold);
+  font-size: 18px;
+  display: block;
+}
+
+/* Exam summary strip */
+
+.ticker {
+  background: var(--navy);
+  color: white;
+  padding: 17px 0;
+}
+
+.ticker-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.ticker-item {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
+  align-items: center;
+  gap: 12px;
+  border-right: 1px solid #ffffff22;
+  padding: 3px 18px;
 }
 
-.resourcebar input,
-.resourcebar select,
-.field input,
-.field select,
-.field textarea {
-  border: 1px solid var(--line);
+.ticker-item:first-child {
+  padding-left: 0;
+}
+
+.ticker-item:last-child {
+  border: 0;
+}
+
+.ticker-icon {
+  color: var(--gold);
+}
+
+.ticker-item b {
+  display: block;
+  font-size: 13px;
+}
+
+.ticker-item span {
+  display: block;
+  font-size: 11px;
+  color: #b5c8d9;
+}
+
+/* General sections */
+
+.section {
+  padding: 82px 0;
+}
+
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 28px;
+}
+
+.kicker {
+  color: #a47516;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.section h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(31px, 4vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -.025em;
+  color: var(--navy);
+  margin: 9px 0 10px;
+}
+
+.section-head p {
+  max-width: 550px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.text-link {
+  font-weight: 850;
+  color: var(--blue);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* Exam category cards */
+
+.exam-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.exam-card {
   background: white;
-  border-radius: 9px;
-  padding: 11px;
-  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px;
+  min-height: 205px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s, border .2s, box-shadow .2s;
 }
 
-.resourcebar input {
-  flex: 1;
-  min-width: 180px;
+.exam-card:hover {
+  transform: translateY(-5px);
+  border-color: #d9b65f;
+  box-shadow: var(--shadow);
 }
 
-.resource {
+.exam-card:after {
+  content: "";
+  position: absolute;
+  right: -32px;
+  bottom: -48px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #f4bd4f15;
+}
+
+.exam-icon {
+  width: 47px;
+  height: 47px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #edf4f9;
+  margin-bottom: 18px;
+}
+
+.exam-card h3 {
+  margin: 0 0 7px;
+  font-size: 17px;
+}
+
+.exam-card p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 17px;
+}
+
+.arrow {
+  font-size: 12px;
+  font-weight: 850;
+  color: var(--blue);
+}
+
+/* Study method section */
+
+.split {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.feature-panel {
+  background: var(--navy);
+  border-radius: 24px;
+  padding: 30px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-panel:after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border: 1px solid #ffffff13;
+  border-radius: 50%;
+  right: -70px;
+  top: -90px;
+  box-shadow: 0 0 0 30px #ffffff05, 0 0 0 60px #ffffff04;
+}
+
+.feature-panel h3 {
+  font: 700 28px/1.2 "Playfair Display", Georgia, serif;
+  margin: 14px 0;
+}
+
+.feature-panel p {
+  color: #bdcede;
+}
+
+.feature-list {
+  display: grid;
+  gap: 13px;
+  margin: 23px 0;
+}
+
+.feature-row {
   display: flex;
   gap: 12px;
   align-items: flex-start;
 }
 
-.resource-details {
-  flex: 1;
-  min-width: 0;
+.check {
+  color: var(--gold);
+  font-weight: 900;
 }
 
-.tagrow {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.empty {
-  padding: 25px;
-  text-align: center;
-  color: var(--muted);
-  border: 1px dashed var(--line);
-  border-radius: 12px;
-  grid-column: 1 / -1;
-}
-
-.banner {
-  background: var(--green-light);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.footer {
-  border-top: 1px solid var(--line);
-  padding: 28px 6%;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.footer a {
-  color: var(--green);
-}
-
-/* Admin dashboard */
-
-.adminwrap {
-  display: none;
-  padding: 30px 5%;
-}
-
-.adminwrap.show {
+.feature-row b {
   display: block;
-}
-
-.adminlayout {
-  display: grid;
-  grid-template-columns: 230px 1fr;
-  gap: 18px;
-}
-
-.side button {
-  display: block;
-  width: 100%;
-  text-align: left;
-  margin: 5px 0;
-}
-
-.adminpanel {
-  display: none;
-}
-
-.adminpanel.active {
-  display: block;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 13px;
-}
-
-.field label {
-  font-size: 12px;
-  font-weight: bold;
-  color: var(--muted);
-}
-
-.field input,
-.field select,
-.field textarea {
-  width: 100%;
-}
-
-.formgrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.drop {
-  border: 1px dashed var(--line);
-  padding: 15px;
-  border-radius: 10px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.tablewrap {
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
   font-size: 13px;
 }
 
-th, td {
-  text-align: left;
-  border-bottom: 1px solid var(--line);
-  padding: 12px 8px;
+.feature-row span {
+  font-size: 12px;
+  color: #bdcede;
 }
 
-.modalbg {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 30;
-  background: #06110bd9;
-  align-items: center;
-  justify-content: center;
+/* Study resource library */
+
+.resource-area {
+  background: #eef3f6;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filters input,
+.filters select {
+  border: 1px solid #d7e0e7;
+  border-radius: 11px;
+  padding: 12px 13px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.filters input {
+  flex: 1;
+  min-width: 220px;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.resource-card {
+  background: white;
+  border: 1px solid #dfe7ec;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.resource-top {
+  height: 118px;
+  background: linear-gradient(135deg, #0a2b4c, #1c5c83);
+  padding: 19px;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.resource-top:after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #ffffff22;
+  border-radius: 50%;
+  right: -25px;
+  top: -60px;
+  box-shadow: 0 0 0 18px #ffffff08, 0 0 0 36px #ffffff05;
+}
+
+.resource-symbol {
+  z-index: 1;
+}
+
+.resource-type {
+  font-size: 10px;
+  letter-spacing: .13em;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: #ffffff20;
+  padding: 6px 9px;
+  border-radius: 999px;
+  z-index: 1;
+}
+
+.resource-body {
   padding: 18px;
 }
 
-.modalbg.show {
+.resource-meta {
   display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
 }
 
-.modal {
-  width: min(450px, 100%);
+.tag {
+  font-size: 10px;
+  font-weight: 850;
+  border-radius: 999px;
+  padding: 5px 8px;
+  background: #eef5f9;
+  color: #285879;
+}
+
+.tag.premium {
+  background: #fff3d5;
+  color: #8a6115;
+}
+
+.resource-body h3 {
+  font-size: 16px;
+  line-height: 1.35;
+  margin: 13px 0 8px;
+}
+
+.resource-body p {
+  font-size: 12px;
+  color: var(--muted);
+  min-height: 39px;
+  margin: 0 0 17px;
+}
+
+.resource-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid #edf0f2;
+  padding-top: 13px;
+}
+
+.resource-foot strong {
+  font-size: 14px;
+}
+
+.resource-foot .btn {
+  padding: 9px 12px;
+  font-size: 11px;
+}
+
+.empty {
+  grid-column: 1 / -1;
   background: white;
-  border-radius: 18px;
-  padding: 25px;
-  max-height: 90vh;
-  overflow-y: auto;
+  border: 1px dashed #cbd6df;
+  padding: 28px;
+  border-radius: 16px;
+  text-align: center;
+  color: var(--muted);
 }
 
-.previewbox {
-  background: var(--green-light);
-  padding: 14px;
-  border-radius: 10px;
+/* Video learning section */
+
+.video-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.video-art {
+  border-radius: 22px;
+  min-height: 300px;
+  background: linear-gradient(145deg, #0a2745, #174c71);
+  padding: 26px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  color: white;
+}
+
+.video-art:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0deg, #071e36d9, transparent 70%),
+    url("Himalayan_Pathshala_Banner.jpg") center / cover;
+  opacity: .62;
+}
+
+.video-art-content {
+  position: relative;
+  z-index: 1;
+}
+
+.play {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--gold);
+  color: var(--navy);
+  margin-bottom: 30px;
+  box-shadow: 0 0 0 9px #f4bd4f25;
+}
+
+.video-art h3 {
+  font: 700 29px/1.1 "Playfair Display", Georgia, serif;
+  margin: 0 0 8px;
+}
+
+.video-art p {
+  color: #d4e0e9;
+  margin: 0;
+}
+
+.video-copy p {
+  color: var(--muted);
+}
+
+.video-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.mini-point {
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: white;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mini-point span {
+  display: block;
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+/* Interactive demo quiz */
+
+.quiz-wrap {
+  background: linear-gradient(130deg, #fff, #f5f0e4);
+  border-block: 1px solid #eee5d0;
+}
+
+.quiz-card {
+  background: #fff;
+  border: 1px solid #e8e1d2;
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+  max-width: 760px;
+}
+
+.quiz-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.quiz-top span {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .1em;
+  color: #9b6d13;
+}
+
+.quiz-progress {
+  height: 5px;
+  border-radius: 9px;
+  background: #edf0f2;
+  margin: 18px 0 22px;
+  overflow: hidden;
+}
+
+.quiz-progress div {
+  height: 100%;
+  width: 0;
+  background: var(--gold);
+  transition: width .25s;
+}
+
+.quiz-card h3 {
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.answer {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  text-align: left;
+  padding: 13px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.answer:hover {
+  border-color: #d5a536;
+  background: #fffaf0;
+}
+
+.answer.correct {
+  border-color: #27956a;
+  background: #eaf8f0;
+}
+
+.answer.wrong {
+  border-color: #c34b4b;
+  background: #fff0f0;
+}
+
+.answer:disabled {
+  cursor: default;
+}
+
+.quiz-result {
+  padding: 13px;
+  border-radius: 12px;
+  background: #eef6fa;
   font-size: 13px;
+  margin-top: 12px;
 }
 
-.hidden {
-  display: none !important;
+/* Call to action */
+
+.newsletter {
+  padding: 0 0 78px;
 }
+
+.newsletter-box {
+  background: var(--navy);
+  border-radius: 24px;
+  padding: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-box:after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -130px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #ffffff18;
+  border-radius: 50%;
+  box-shadow: 0 0 0 30px #ffffff05, 0 0 0 60px #ffffff05;
+}
+
+.newsletter-box h2 {
+  font: 700 30px/1.1 Georgia, serif;
+  margin: 0 0 9px;
+}
+
+.newsletter-box p {
+  color: #bdcede;
+  margin: 0;
+}
+
+.newsletter-box .btn {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+/* Footer */
+
+.footer {
+  background: #041729;
+  color: #d6e2ed;
+  padding: 45px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 28px;
+}
+
+.footer h4 {
+  color: white;
+  margin: 0 0 13px;
+}
+
+.footer p,
+.footer a {
+  font-size: 12px;
+  color: #aebfce;
+}
+
+.footer-links {
+  display: grid;
+  gap: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ffffff1a;
+  margin-top: 30px;
+  padding-top: 17px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: #90a5b7;
+}
+
+/* Notifications, mobile menu and animations */
 
 .toast {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 40;
-  display: none;
-  background: #18251d;
+  bottom: 20px;
+  right: 20px;
+  z-index: 70;
+  background: #09233d;
   color: white;
-  padding: 13px 17px;
-  border-radius: 10px;
-  max-width: calc(100% - 36px);
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  max-width: min(390px, calc(100% - 40px));
+  display: none;
 }
 
 .toast.show {
   display: block;
 }
 
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid #e8b44f;
-  outline-offset: 3px;
+.mobile-panel {
+  display: none;
 }
 
-@media (max-width: 850px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .adminlayout {
-    grid-template-columns: 1fr;
-  }
-
-  .navlinks {
-    display: none;
-  }
+.no-motion * {
+  animation: none !important;
+  scroll-behavior: auto !important;
+  transition: none !important;
 }
 
-@media (max-width: 560px) {
-  .grid,
-  .formgrid {
-    grid-template-columns: 1fr;
+@keyframes cinematic {
+  from { transform: scale(1.015) translate(0, 0); }
+  to { transform: scale(1.065) translate(-.4%, -.3%); }
+}
+
+@keyframes shine {
+  0%, 58%, 100% { left: -65%; opacity: 0; }
+  64% { opacity: 1; }
+  79% { left: 135%; opacity: 0; }
+}
+
+/* Tablet layout */
+
+@media (max-width: 1000px) {
+  .navlinks { gap: 13px; }
+  .navlinks a { font-size: 12px; }
+  .hero-grid { gap: 25px; }
+  .exam-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
+  .footer-grid > div:last-child { grid-column: 2 / 4; }
+}
+
+/* Mobile layout */
+
+@media (max-width: 760px) {
+  .wrap { width: min(100% - 30px, 600px); }
+  .topline .wrap { justify-content: center; text-align: center; }
+  .nav { height: 68px; }
+  .navlinks { display: none; }
+  .menu-btn { display: inline-flex; }
+  .navright > .btn { display: none; }
+
+  .mobile-panel {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid var(--line);
+    padding: 12px 20px 18px;
+    box-shadow: var(--shadow);
   }
 
-  .banner {
+  .mobile-panel.open {
+    display: grid;
+    gap: 2px;
+  }
+
+  .mobile-panel a {
+    padding: 11px 4px;
+    border-bottom: 1px solid #edf0f2;
+    font-weight: 750;
+    font-size: 13px;
+  }
+
+  .hero { padding: 38px 0 30px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+  .hero h1 { font-size: clamp(42px, 11vw, 61px); }
+  .lead { font-size: 15px; }
+  .hero-art { margin: 0 5px 12px; }
+  .float-note { left: -8px; bottom: -17px; }
+  .hero-number { right: -6px; }
+
+  .ticker-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .ticker-item {
+    padding: 7px 8px;
+    border: 0;
+  }
+
+  .ticker-item:first-child { padding-left: 8px; }
+  .section { padding: 58px 0; }
+
+  .section-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .exam-grid { gap: 11px; }
+  .exam-card { padding: 17px; min-height: 190px; }
+
+  .split,
+  .video-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .resource-grid { grid-template-columns: 1fr 1fr; }
+  .resource-body { padding: 14px; }
+  .resource-top { height: 95px; }
+  .resource-body h3 { font-size: 14px; }
+  .resource-body p { min-height: 0; }
+  .video-art { min-height: 260px; }
+
+  .newsletter-box {
+    padding: 26px;
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .hero {
-    padding: 35px 5%;
-  }
-
-  .section {
-    padding: 30px 5%;
-  }
-
-  .nav {
-    padding: 10px 4%;
-  }
-
-  .brand {
-    font-size: 13px;
-  }
-
-  .brand small {
-    font-size: 9px;
-  }
-
-  .nav > .btn {
-    padding: 8px 10px;
-    font-size: 12px;
-  }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid > div:last-child { grid-column: auto; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+/* Small phones */
 
-  .hero-banner,
-  .hero-banner img,
-  .hero-banner::after,
-  .btn,
-  a {
-    animation: none !important;
-    transition: none !important;
-  }
+@media (max-width: 480px) {
+  .brandname { font-size: 15px; }
+  .brandmark { width: 40px; height: 40px; }
+  .ticker-row { grid-template-columns: 1fr 1fr; }
+  .ticker-item { gap: 8px; }
+  .ticker-item b { font-size: 11px; }
+  .ticker-item span { font-size: 10px; }
+  .exam-grid { grid-template-columns: 1fr 1fr; }
+  .exam-card { padding: 14px; }
+  .exam-card h3 { font-size: 14px; }
+  .exam-card p { font-size: 11px; }
+  .exam-icon { width: 40px; height: 40px; }
+  .resource-grid { grid-template-columns: 1fr; }
+  .resource-top { height: 100px; }
+  .answers { grid-template-columns: 1fr; }
+  .quiz-card { padding: 19px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid > div:first-child { grid-column: 1 / -1; }
+  .hero-actions .btn { flex: 1; }
+  .video-points { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .brandmark { width: 47px; height: 47px; }
+  .brandname { font-size: 15px; }
+  .brandname small { font-size: 8px; }
 }
 </style>
 </head>
 
 <body>
 
-<header class="nav">
-  <div class="brand">
-    <div class="logo">HP</div>
-    <div>
-      Himalayan PathShala
-      <small>LEARN • PRACTISE • SUCCEED</small>
+<div class="topline">
+  <div class="wrap">
+    <span><strong>HIMALAYAN PATHSHALA</strong> &nbsp;|&nbsp; Your preparation, with purpose.</span>
+    <span>HPPSC · HPRCA · HPAS · JE / AE</span>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap nav">
+
+    <a class="brand" href="#home" aria-label="Himalayan PathShala home">
+      <img class="brandmark"
+           src="Himalayan_Pathshala_Logo.webp"
+           alt="Himalayan PathShala logo">
+      <span class="brandname">
+        Himalayan PathShala
+        <small>SHEELAM PARAM BHUSHANAM</small>
+      </span>
+    </a>
+
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#exams">Exams</a>
+      <a href="#resources">Study Library</a>
+      <a href="#youtube">Video Classes</a>
+      <a href="#practice">Practice</a>
+    </nav>
+
+    <div class="navright">
+      <a class="btn btn-dark"
+         href="https://www.youtube.com/@himalayanpathshala"
+         target="_blank" rel="noopener noreferrer">
+        <i data-lucide="youtube" class="icon" aria-hidden="true"></i>
+        Watch on YouTube
+      </a>
+
+      <button class="menu-btn" id="menuToggle"
+              aria-expanded="false" aria-controls="mobilePanel">
+        <i data-lucide="menu" class="icon" aria-hidden="true"></i>
+        Menu
+      </button>
+    </div>
+
+    <div class="mobile-panel" id="mobilePanel">
+      <a href="#exams">Exam preparation</a>
+      <a href="#resources">Study library</a>
+      <a href="#youtube">Video classes</a>
+      <a href="#practice">Practice quiz</a>
+      <a href="https://www.youtube.com/@himalayanpathshala"
+         target="_blank" rel="noopener noreferrer">YouTube channel ↗</a>
+    </div>
+
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- Main hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+
+      <div>
+        <div class="eyebrow">
+          <span class="dot"></span>
+          A focused learning space for Himachal
+        </div>
+
+        <h1>Make every hour of study <em>count.</em></h1>
+
+        <p class="lead">
+          Clear concepts. Relevant practice. Consistent revision.
+          Build a smarter preparation routine for Himachal Pradesh
+          competitive examinations with Himalayan PathShala.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#resources">
+            Explore study resources
+            <i data-lucide="arrow-up-right" class="icon" aria-hidden="true"></i>
+          </a>
+
+          <a class="btn btn-ghost" href="#youtube">
+            <i data-lucide="play-circle" class="icon" aria-hidden="true"></i>
+            Watch free lessons
+          </a>
+        </div>
+
+        <div class="proof">
+          <span class="proofline"></span>
+          <span>Concept-led learning · Exam-focused practice · Learn at your pace</span>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="hero-banner">
+          <img src="Himalayan_Pathshala_Banner.jpg"
+               alt="Himalayan PathShala banner with Himalayan mountains, sunrise and competitive exam subjects"
+               fetchpriority="high">
+        </div>
+
+        <div class="hero-number">
+          <b>HP • GS • PYQ</b>
+          YOUR PREPARATION HUB
+        </div>
+
+        <div class="float-note">
+          <div class="float-icon">
+            <i data-lucide="compass" class="icon" aria-hidden="true"></i>
+          </div>
+          <div>
+            <strong>Study with direction</strong>
+            <span>Learn · Practise · Revise · Repeat</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Exam summary strip -->
+  <div class="ticker">
+    <div class="wrap ticker-row">
+
+      <div class="ticker-item">
+        <div class="ticker-icon">
+          <i data-lucide="landmark" class="icon" aria-hidden="true"></i>
+        </div>
+        <div>
+          <b>HPPSC / HPRCA</b>
+          <span>State recruitment exams</span>
+        </div>
+      </div>
+
+      <div class="ticker-item">
+        <div class="ticker-icon">
+          <i data-lucide="book-open" class="icon" aria-hidden="true"></i>
+        </div>
+        <div>
+          <b>HPAS & Allied Services</b>
+          <span>General studies focus</span>
+        </div>
+      </div>
+
+      <div class="ticker-item">
+        <div class="ticker-icon">
+          <i data-lucide="settings" class="icon" aria-hidden="true"></i>
+        </div>
+        <div>
+          <b>JE / AE</b>
+          <span>Engineering branches</span>
+        </div>
+      </div>
+
+      <div class="ticker-item">
+        <div class="ticker-icon">
+          <i data-lucide="notebook-pen" class="icon" aria-hidden="true"></i>
+        </div>
+        <div>
+          <b>Notes + PYQs</b>
+          <span>Revise with purpose</span>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <nav class="navlinks" aria-label="Main navigation">
-    <a href="#courses">Courses</a>
-    <a href="#resources">Study Material</a>
-    <a href="#videos">Video Lessons</a>
-    <a href="#tests">Practice Tests</a>
-  </nav>
+  <!-- Exam categories -->
+  <section class="section" id="exams">
+    <div class="wrap">
 
-  <button class="btn primary" id="adminOpen" type="button">
-    Admin Login
-  </button>
-</header>
-
-<main id="publicSite">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <span class="pill">Made for Himachal exam aspirants</span>
-
-      <h1>
-        Prepare smarter.<br>
-        <span>Achieve more.</span>
-      </h1>
-
-      <p>
-        Focused HP GK lessons, exam-ready notes, previous-year
-        questions and practice tests to help you prepare confidently.
-      </p>
-
-      <div class="heroactions">
-        <a class="btn primary" href="#courses">Explore Courses</a>
-        <a class="btn outline" href="#resources">Free Resources</a>
+      <div class="section-head">
+        <div>
+          <div class="kicker">Choose your direction</div>
+          <h2>Preparation, organised around your exam.</h2>
+          <p>
+            Find a clear starting point by exam family, then use topic
+            notes and practice to build momentum.
+          </p>
+        </div>
+        <a class="text-link" href="#resources">Browse learning library ↗</a>
       </div>
 
-      <div class="stats">
-        <div class="stat">
-          <strong>HP GK</strong>
-          <span>Zero to Infinity</span>
-        </div>
+      <div class="exam-grid">
 
-        <div class="stat">
-          <strong>PYQs</strong>
-          <span>Exam-focused practice</span>
-        </div>
+        <a class="exam-card" href="#resources" data-exam="HP GK">
+          <div class="exam-icon">
+            <i data-lucide="mountain" class="icon" aria-hidden="true"></i>
+          </div>
+          <h3>Himachal Pradesh GK</h3>
+          <p>History, geography, culture, polity and state-specific knowledge.</p>
+          <span class="arrow">Explore HP GK ↗</span>
+        </a>
 
-        <div class="stat">
-          <strong>Free + Premium</strong>
-          <span>Choose your path</span>
-        </div>
+        <a class="exam-card" href="#resources" data-exam="HPAS">
+          <div class="exam-icon">
+            <i data-lucide="landmark" class="icon" aria-hidden="true"></i>
+          </div>
+          <h3>HPAS & Allied Services</h3>
+          <p>General studies, current affairs and structured revision.</p>
+          <span class="arrow">Explore HPAS ↗</span>
+        </a>
+
+        <a class="exam-card" href="#resources" data-exam="HPRCA / HPPSC">
+          <div class="exam-icon">
+            <i data-lucide="book-open-check" class="icon" aria-hidden="true"></i>
+          </div>
+          <h3>HPPSC / HPRCA</h3>
+          <p>Recruitment-focused notes, practice and previous questions.</p>
+          <span class="arrow">Explore state exams ↗</span>
+        </a>
+
+        <a class="exam-card" href="#resources" data-exam="JE / AE">
+          <div class="exam-icon">
+            <i data-lucide="cog" class="icon" aria-hidden="true"></i>
+          </div>
+          <h3>JE / AE Engineering</h3>
+          <p>Technical preparation for state and central engineering roles.</p>
+          <span class="arrow">Explore engineering ↗</span>
+        </a>
+
       </div>
     </div>
-
-    <!-- Keep the banner image beside this HTML file -->
-    <div class="hero-banner">
-      <img
-        src="Himalayan_Pathshala_Banner.jpg"
-        alt="Himalayan PathShala educational banner for Himachal Pradesh competitive exams"
-        loading="eager"
-        fetchpriority="high"
-      >
-    </div>
   </section>
 
-  <!-- COURSES -->
-  <section class="section" id="courses">
-    <h2>Choose your preparation path</h2>
-    <p class="section-intro">
-      Start with free lessons and build your preparation topic by topic.
-    </p>
+  <!-- Study method -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap split">
 
-    <div class="grid">
-      <article class="card">
-        <span class="pill">Popular</span>
-        <h3>HP GK: Zero to Infinity</h3>
-        <p>
-          Himachal history, geography, polity, culture and PYQs.
-        </p>
-        <a class="btn secondary" href="#resources">Explore</a>
-      </article>
+      <div class="feature-panel">
+        <span class="eyebrow">A practical study loop</span>
+        <h3>Small, consistent steps. Stronger preparation.</h3>
+        <p>Use a repeatable routine rather than collecting resources without a plan.</p>
 
-      <article class="card">
-        <span class="pill">Core subjects</span>
-        <h3>General Studies</h3>
-        <p>
-          Indian polity, history, geography, science and current affairs.
-        </p>
-        <a class="btn secondary" href="#resources">Explore</a>
-      </article>
+        <div class="feature-list">
 
-      <article class="card">
-        <span class="pill gold">Practice</span>
-        <h3>Exam Practice &amp; Mock Tests</h3>
-        <p>
-          Topic quizzes, previous-year questions and timed tests.
-        </p>
-        <a class="btn secondary" href="#tests">Try Demo</a>
-      </article>
-    </div>
-  </section>
+          <div class="feature-row">
+            <span class="check">01</span>
+            <div>
+              <b>Understand the concept</b>
+              <span>Start with a topic and make the fundamentals clear.</span>
+            </div>
+          </div>
 
-  <!-- RESOURCE LIBRARY -->
-  <section class="section" id="resources">
-    <h2>Study material library</h2>
-    <p class="section-intro">
-      Browse free resources and premium study packs.
-    </p>
+          <div class="feature-row">
+            <span class="check">02</span>
+            <div>
+              <b>Practise exam-style questions</b>
+              <span>Use PYQs and short quizzes to check understanding.</span>
+            </div>
+          </div>
 
-    <div class="resourcebar">
-      <input
-        id="searchResource"
-        type="search"
-        placeholder="Search resources..."
-        aria-label="Search study resources"
-      >
+          <div class="feature-row">
+            <span class="check">03</span>
+            <div>
+              <b>Revise and revisit</b>
+              <span>Return to weak areas and keep your notes concise.</span>
+            </div>
+          </div>
 
-      <select id="typeFilter" aria-label="Filter by format">
-        <option value="all">All formats</option>
-        <option value="PDF">PDF notes</option>
-        <option value="Video">Video lessons</option>
-        <option value="Test">Practice tests</option>
-      </select>
+        </div>
 
-      <select id="accessFilter" aria-label="Filter by access">
-        <option value="all">Free + Premium</option>
-        <option value="Free">Free access</option>
-        <option value="Premium">Premium access</option>
-      </select>
-    </div>
+        <a class="btn btn-gold" href="#practice">Try the sample quiz ↗</a>
+      </div>
 
-    <div class="grid" id="resourceGrid"></div>
-  </section>
-
-  <!-- VIDEO LESSONS -->
-  <section class="section" id="videos">
-    <div class="banner">
       <div>
-        <h3>Learn with Himalayan PathShala</h3>
-        <p>Watch topic-wise lessons on YouTube.</p>
+        <div class="kicker">Learn with intention</div>
+        <h2>Not just more content. A better way to use it.</h2>
+        <p style="color:var(--muted)">
+          A useful study hub should make the next step obvious:
+          choose a topic, learn it, test it, and come back to what needs work.
+        </p>
+
+        <div class="feature-list" style="margin-top:24px">
+
+          <div class="feature-row">
+            <span class="check" style="color:var(--green)">✓</span>
+            <div>
+              <b>Find resources quickly</b>
+              <span style="color:var(--muted)">Search by topic, format or exam category.</span>
+            </div>
+          </div>
+
+          <div class="feature-row">
+            <span class="check" style="color:var(--green)">✓</span>
+            <div>
+              <b>Separate free and premium material</b>
+              <span style="color:var(--muted)">Clear labels help learners understand access before clicking.</span>
+            </div>
+          </div>
+
+          <div class="feature-row">
+            <span class="check" style="color:var(--green)">✓</span>
+            <div>
+              <b>Learn from video lessons</b>
+              <span style="color:var(--muted)">Use the channel for explanations, then practise independently.</span>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <a
-        class="btn primary"
-        href="https://youtube.com/@himalayanpathshala"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Visit YouTube
-      </a>
     </div>
   </section>
 
-  <!-- DEMO QUIZ -->
-  <section class="section" id="tests">
-    <h2>Try a quick demo test</h2>
+  <!-- Searchable resource library -->
+  <section class="section resource-area" id="resources">
+    <div class="wrap">
 
-    <div class="card">
-      <span class="pill">DEMO · HP GK</span>
-
-      <h3>
-        Which is the highest peak located entirely within Himachal Pradesh?
-      </h3>
-
-      <div id="quizChoices" style="display:grid;gap:9px;margin:15px 0">
-        <button class="btn outline" data-answer="a" type="button">
-          A. Shilla
-        </button>
-        <button class="btn outline" data-answer="b" type="button">
-          B. Reo Purgyil
-        </button>
-        <button class="btn outline" data-answer="c" type="button">
-          C. Hanuman Tibba
-        </button>
-        <button class="btn outline" data-answer="d" type="button">
-          D. Deo Tibba
-        </button>
+      <div class="section-head">
+        <div>
+          <div class="kicker">The learning library</div>
+          <h2>Find the right resource, faster.</h2>
+          <p>
+            Search this sample catalogue or filter it by subject and format.
+            Replace the sample entries with your verified notes and lesson links before launch.
+          </p>
+        </div>
       </div>
 
-      <div
-        id="quizResult"
-        class="previewbox hidden"
-        aria-live="polite"
-      ></div>
+      <div class="filters">
+        <input id="search" type="search"
+               placeholder="Search HP GK, polity, PYQs…"
+               aria-label="Search study resources">
+
+        <select id="examFilter" aria-label="Filter by exam">
+          <option value="all">All exam categories</option>
+          <option>HP GK</option>
+          <option>HPAS</option>
+          <option>HPRCA / HPPSC</option>
+          <option>JE / AE</option>
+          <option>General Studies</option>
+        </select>
+
+        <select id="typeFilter" aria-label="Filter by format">
+          <option value="all">All formats</option>
+          <option>PDF Notes</option>
+          <option>Video Lesson</option>
+          <option>Practice Set</option>
+        </select>
+      </div>
+
+      <div class="resource-grid" id="resourceGrid"></div>
+    </div>
+  </section>
+
+  <!-- YouTube section -->
+  <section class="section" id="youtube">
+    <div class="wrap video-section">
+
+      <a class="video-art"
+         href="https://www.youtube.com/@himalayanpathshala"
+         target="_blank" rel="noopener noreferrer">
+
+        <div class="video-art-content">
+          <div class="play">
+            <i data-lucide="play" class="icon" aria-hidden="true"></i>
+          </div>
+          <h3>Continue learning on YouTube.</h3>
+          <p>Open the Himalayan PathShala channel for available video lessons.</p>
+        </div>
+      </a>
+
+      <div class="video-copy">
+        <div class="kicker">Watch · Understand · Practise</div>
+        <h2>Bring the classroom into your study routine.</h2>
+        <p>
+          Use video explanations to understand a topic, pause to make notes,
+          then test what you remember. The channel button takes you directly
+          to the supplied handle.
+        </p>
+
+        <div class="video-points">
+          <div class="mini-point">Concept lessons<span>Build understanding</span></div>
+          <div class="mini-point">Current affairs<span>Stay in the loop</span></div>
+          <div class="mini-point">Exam revision<span>Return to key facts</span></div>
+          <div class="mini-point">Question practice<span>Check your recall</span></div>
+        </div>
+
+        <a class="btn btn-dark"
+           href="https://www.youtube.com/@himalayanpathshala"
+           target="_blank" rel="noopener noreferrer">
+          Visit @himalayanpathshala ↗
+        </a>
+
+        <p style="font-size:11px">
+          Channel videos and statistics are not embedded here; connect verified video IDs to feature specific lessons.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive quiz -->
+  <section class="section quiz-wrap" id="practice">
+    <div class="wrap">
+
+      <div class="section-head">
+        <div>
+          <div class="kicker">Active recall</div>
+          <h2>Take a quick knowledge check.</h2>
+          <p>
+            A short demonstration of the quiz experience. Verify every answer
+            against your chosen exam source before publishing a full test bank.
+          </p>
+        </div>
+      </div>
+
+      <div class="quiz-card">
+        <div class="quiz-top">
+          <span id="quizLabel">DEMO QUIZ · HP GK</span>
+          <span id="quizCount">Question 1 of 3</span>
+        </div>
+
+        <div class="quiz-progress">
+          <div id="progress"></div>
+        </div>
+
+        <h3 id="question">
+          Which river is also known as the Chandrabhaga in Himachal Pradesh?
+        </h3>
+
+        <div class="answers" id="answers"></div>
+        <div id="quizResult" aria-live="polite"></div>
+
+        <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:18px">
+          <span id="scoreText" style="font-size:12px;color:var(--muted)">
+            Answer each question to continue.
+          </span>
+          <button class="btn btn-dark" id="nextQuestion" disabled>
+            Next question →
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final call to action -->
+  <section class="newsletter">
+    <div class="wrap">
+      <div class="newsletter-box">
+        <div>
+          <h2>Make your next study session count.</h2>
+          <p>Choose a topic, watch a lesson, and test your understanding today.</p>
+        </div>
+        <a class="btn btn-gold" href="#resources">Start studying ↗</a>
+      </div>
     </div>
   </section>
 
 </main>
 
-<!-- ADMIN DASHBOARD -->
-<section id="adminArea" class="adminwrap">
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap">
 
-  <h2>Himalayan PathShala Admin</h2>
+    <div class="footer-grid">
 
-  <p class="muted">
-    Manage resources and configure free or premium access.
-  </p>
+      <div>
+        <a class="brand" href="#home">
+          <img class="brandmark"
+               src="Himalayan_Pathshala_Logo.webp"
+               alt="Himalayan PathShala logo">
+          <span class="brandname" style="color:white">
+            Himalayan PathShala
+            <small>SHEELAM PARAM BHUSHANAM</small>
+          </span>
+        </a>
 
-  <div class="previewbox">
-    Prototype only: this version does not securely store uploads
-    or provide real premium access protection.
-  </div>
-
-  <div class="adminlayout" style="margin-top:20px">
-
-    <aside class="card side">
-      <button class="btn secondary" data-panel="uploadPanel" type="button">
-        Add Resource
-      </button>
-
-      <button class="btn outline" data-panel="libraryPanel" type="button">
-        Resource Library
-      </button>
-
-      <button class="btn outline" data-panel="accessPanel" type="button">
-        Access Settings
-      </button>
-
-      <button class="btn outline" id="adminLogout" type="button">
-        Log Out
-      </button>
-    </aside>
-
-    <div>
-
-      <!-- ADD RESOURCE -->
-      <div class="card adminpanel active" id="uploadPanel">
-        <h3>Add PDF, Video or Test</h3>
-
-        <form id="uploadForm">
-
-          <div class="formgrid">
-            <div class="field">
-              <label for="resTitle">Resource title</label>
-              <input id="resTitle" required>
-            </div>
-
-            <div class="field">
-              <label for="resType">Resource type</label>
-              <select id="resType">
-                <option>PDF</option>
-                <option>Video</option>
-                <option>Test</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="resExam">Exam category</label>
-              <select id="resExam">
-                <option>HP GK</option>
-                <option>HPAS</option>
-                <option>HP Allied Services</option>
-                <option>HPRCA / HPPSC</option>
-                <option>JOA IT</option>
-                <option>SSC / RRB</option>
-                <option>General Studies</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="resAccess">Access level</label>
-              <select id="resAccess">
-                <option>Free</option>
-                <option>Premium</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="resPrice">Price (₹)</label>
-              <input
-                id="resPrice"
-                type="number"
-                min="0"
-                value="0"
-              >
-            </div>
-
-            <div class="field">
-              <label for="resDemo">Preview mode</label>
-              <select id="resDemo">
-                <option>Sample preview</option>
-                <option>Full free access</option>
-                <option>No preview</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="resDesc">Description</label>
-            <textarea id="resDesc" rows="3"></textarea>
-          </div>
-
-          <div class="field">
-            <label for="resFile">Select PDF or video</label>
-            <input
-              id="resFile"
-              type="file"
-              accept=".pdf,video/*"
-            >
-            <div class="drop">
-              Selecting a file here does not upload it to a server.
-              Use a hosted URL below to link to an existing resource.
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="resLink">Hosted resource URL</label>
-            <input
-              id="resLink"
-              type="url"
-              placeholder="https://..."
-            >
-          </div>
-
-          <button class="btn primary" type="submit">
-            Add to Library
-          </button>
-        </form>
+        <p style="max-width:280px">
+          A focused learning destination for Himachal Pradesh competitive-exam aspirants.
+          Learn with purpose, practise with consistency.
+        </p>
       </div>
 
-      <!-- RESOURCE MANAGEMENT -->
-      <div class="card adminpanel" id="libraryPanel">
-        <h3>Resource Library</h3>
-
-        <div class="tablewrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Resource</th>
-                <th>Type</th>
-                <th>Access</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody id="adminRows"></tbody>
-          </table>
+      <div>
+        <h4>Explore</h4>
+        <div class="footer-links">
+          <a href="#exams">Exam categories</a>
+          <a href="#resources">Study library</a>
+          <a href="#practice">Practice quiz</a>
         </div>
       </div>
 
-      <!-- ACCESS SETTINGS -->
-      <div class="card adminpanel" id="accessPanel">
-        <h3>Access Settings</h3>
+      <div>
+        <h4>Learn</h4>
+        <div class="footer-links">
+          <a href="#youtube">Video classes</a>
+          <a href="#resources">Notes & PYQs</a>
+          <a href="https://www.nptel.ac.in/"
+             target="_blank" rel="noopener noreferrer">NPTEL learning ↗</a>
+        </div>
+      </div>
 
-        <p>
-          <strong>Free:</strong>
-          Resources are available to everyone.
-        </p>
-
-        <p>
-          <strong>Premium:</strong>
-          Display a sample preview and price. Full access must
-          be granted only after server-side payment verification.
-        </p>
-
-        <ul>
-          <li>Use secure server-side administrator authentication.</li>
-          <li>Store premium PDFs in private file storage.</li>
-          <li>Verify payments before granting access.</li>
-          <li>Use expiring download links.</li>
-          <li>Apply permanent watermarks to premium PDFs.</li>
-        </ul>
+      <div>
+        <h4>Official links</h4>
+        <div class="footer-links">
+          <a href="https://www.youtube.com/@himalayanpathshala"
+             target="_blank" rel="noopener noreferrer">YouTube channel ↗</a>
+          <a href="https://www.hppsc.hp.gov.in/"
+             target="_blank" rel="noopener noreferrer">HPPSC ↗</a>
+          <a href="https://www.nptel.ac.in/"
+             target="_blank" rel="noopener noreferrer">NPTEL ↗</a>
+        </div>
       </div>
 
     </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div>
-    <strong>Himalayan PathShala</strong><br>
-    Learn • Practise • Succeed
-  </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Himalayan PathShala. All rights reserved.</span>
+      <span>Independent educational resource · Not affiliated with IITs or government exam authorities.</span>
+    </div>
 
-  <div>
-    Educational resources for Himachal Pradesh competitive exams.<br>
-    <a
-      href="https://youtube.com/@himalayanpathshala"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      YouTube @himalayanpathshala
-    </a>
   </div>
-
-  <div>© 2026 Himalayan PathShala</div>
 </footer>
 
-<!-- ADMIN LOGIN MODAL -->
-<div
-  class="modalbg"
-  id="loginModal"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="loginTitle"
->
-  <div class="modal">
-    <h2 id="loginTitle">Administrator Login</h2>
-    <p class="muted">Prototype credentials only.</p>
-
-    <form id="loginForm">
-      <div class="field">
-        <label for="adminUser">Username</label>
-        <input
-          id="adminUser"
-          required
-          autocomplete="username"
-        >
-      </div>
-
-      <div class="field">
-        <label for="adminPass">Password</label>
-        <input
-          id="adminPass"
-          type="password"
-          required
-          autocomplete="current-password"
-        >
-      </div>
-
-      <button class="btn primary" type="submit">
-        Sign In
-      </button>
-
-      <button
-        class="btn outline"
-        type="button"
-        id="loginClose"
-      >
-        Cancel
-      </button>
-    </form>
-
-    <div class="previewbox" style="margin-top:15px">
-      Demo username: <code>admin</code><br>
-      Demo password: <code>Demo@12345</code>
-    </div>
-  </div>
-</div>
-
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
 
 <script>
 "use strict";
 
-/* Initial example resources */
-const initialResources = [
+const CHANNEL = "https://www.youtube.com/@himalayanpathshala";
+
+/*
+  Replace sample entries below with your actual PDFs, video URLs,
+  question banks and other verified learning materials.
+*/
+const resources = [
   {
     id: 1,
-    title: "Mountain Passes of Himachal Pradesh",
-    type: "PDF",
+    title: "Himachal Pradesh: Geography Essentials",
     exam: "HP GK",
-    access: "Free",
-    price: 0,
-    demo: "Full free access",
-    desc: "Revision notes covering important mountain passes.",
-    url: "",
-    fileName: ""
+    type: "PDF Notes",
+    access: "Sample",
+    description: "A structured outline for rivers, ranges, districts and key geographical facts.",
+    icon: "mountain",
+    url: ""
   },
   {
     id: 2,
-    title: "Historical Sources of Himachal Pradesh — PYQs",
-    type: "Video",
+    title: "HP History & Culture: Revision Path",
     exam: "HP GK",
-    access: "Free",
-    price: 0,
-    demo: "Sample preview",
-    desc: "Topic-wise lessons and previous-year questions.",
-    url: "https://youtube.com/@himalayanpathshala",
-    fileName: ""
+    type: "Video Lesson",
+    access: "Video",
+    description: "Use a topic-first revision plan alongside verified channel lessons.",
+    icon: "scroll-text",
+    url: CHANNEL
   },
   {
     id: 3,
-    title: "HP GK Complete Revision Notes",
-    type: "PDF",
-    exam: "HPAS",
-    access: "Premium",
-    price: 199,
-    demo: "Sample preview",
-    desc: "Illustrative premium product. Add your own PDF.",
-    url: "",
-    fileName: ""
+    title: "Indian Polity: Core Concepts",
+    exam: "General Studies",
+    type: "PDF Notes",
+    access: "Sample",
+    description: "A concise study-pack placeholder for constitutional concepts and institutions.",
+    icon: "landmark",
+    url: ""
   },
   {
     id: 4,
-    title: "HP GK Topic-wise Practice Test",
-    type: "Test",
+    title: "HPAS General Studies Practice",
+    exam: "HPAS",
+    type: "Practice Set",
+    access: "Demo",
+    description: "An illustrative practice-set listing; replace with your actual question bank.",
+    icon: "file-pen-line",
+    url: ""
+  },
+  {
+    id: 5,
+    title: "HPRCA / HPPSC Previous-Year Questions",
     exam: "HPRCA / HPPSC",
-    access: "Premium",
-    price: 99,
-    demo: "Sample preview",
-    desc: "Illustrative test-series product.",
-    url: "",
-    fileName: ""
+    type: "Practice Set",
+    access: "Sample",
+    description: "Organise previous-year questions by exam, topic and year.",
+    icon: "library-big",
+    url: ""
+  },
+  {
+    id: 6,
+    title: "JE / AE Technical Preparation",
+    exam: "JE / AE",
+    type: "Video Lesson",
+    access: "Video",
+    description: "Create separate playlists for civil, mechanical, electrical and other branches.",
+    icon: "cog",
+    url: CHANNEL
   }
 ];
 
-let resources = [...initialResources];
-let nextId = 5;
+const grid = document.querySelector("#resourceGrid");
 
-const $ = id => document.getElementById(id);
-
-/* Show a small status message */
-function toast(message) {
-  const element = $("toast");
-  element.textContent = message;
-  element.classList.add("show");
-
-  window.setTimeout(() => {
-    element.classList.remove("show");
-  }, 2500);
-}
-
-/* Escape HTML before inserting user-provided text */
-function escapeHTML(value = "") {
+/* Escape text before inserting resource data into HTML. */
+function esc(value) {
   return String(value).replace(/[&<>"']/g, character => ({
     "&": "&amp;",
     "<": "&lt;",
@@ -1162,317 +1839,278 @@ function escapeHTML(value = "") {
   })[character]);
 }
 
-/* Render searchable resources */
+/* Render and filter the resource catalogue. */
 function renderResources() {
-  const query = $("searchResource").value.trim().toLowerCase();
-  const type = $("typeFilter").value;
-  const access = $("accessFilter").value;
+  const query = document.querySelector("#search").value.trim().toLowerCase();
+  const exam = document.querySelector("#examFilter").value;
+  const type = document.querySelector("#typeFilter").value;
 
   const filtered = resources.filter(resource => {
-    const text = (
-      resource.title + " " +
-      resource.exam + " " +
-      resource.desc
-    ).toLowerCase();
+    const matchesExam = exam === "all" || resource.exam === exam;
+    const matchesType = type === "all" || resource.type === type;
+    const searchableText =
+      `${resource.title} ${resource.exam} ${resource.description}`.toLowerCase();
 
-    return text.includes(query) &&
-      (type === "all" || resource.type === type) &&
-      (access === "all" || resource.access === access);
+    return matchesExam && matchesType && searchableText.includes(query);
   });
 
-  $("resourceGrid").innerHTML = filtered.map(resource => `
-    <article class="card">
-      <div class="tagrow">
-        <span class="pill ${
-          resource.access === "Premium" ? "gold" : ""
-        }">
-          ${escapeHTML(resource.access.toUpperCase())}
+  grid.innerHTML = filtered.map(resource => `
+    <article class="resource-card">
+      <div class="resource-top">
+        <span class="resource-symbol">
+          <i data-lucide="${resource.icon}" class="icon" aria-hidden="true"></i>
         </span>
-
-        <span class="pill">
-          ${escapeHTML(resource.type)}
-        </span>
-
-        <span class="pill">
-          ${escapeHTML(resource.exam)}
-        </span>
+        <span class="resource-type">${esc(resource.type)}</span>
       </div>
 
-      <h3>${escapeHTML(resource.title)}</h3>
-      <p>${escapeHTML(resource.desc)}</p>
+      <div class="resource-body">
+        <div class="resource-meta">
+          <span class="tag">${esc(resource.exam)}</span>
+          <span class="tag ${resource.access === "Demo" ? "premium" : ""}">
+            ${esc(resource.access)}
+          </span>
+        </div>
 
-      <div class="cardfoot">
-        <span class="price">
-          ${resource.access === "Free"
-            ? "Free"
-            : "₹" + Number(resource.price || 0)}
-        </span>
+        <h3>${esc(resource.title)}</h3>
+        <p>${esc(resource.description)}</p>
 
-        <button
-          class="btn ${
-            resource.access === "Premium" ? "primary" : "secondary"
-          } small"
-          type="button"
-          onclick="openResource(${resource.id})"
-        >
-          ${
-            resource.access === "Premium"
-              ? "View Details"
-              : resource.demo === "Sample preview"
-                ? "Preview"
-                : "Open Resource"
-          }
-        </button>
+        <div class="resource-foot">
+          <strong>${resource.access === "Video" ? "Watch lesson" : "Study resource"}</strong>
+          <button class="btn btn-dark" type="button" data-resource="${resource.id}">
+            ${resource.url ? "Open ↗" : "Details"}
+          </button>
+        </div>
       </div>
     </article>
   `).join("") || `
-    <div class="empty">No resources match your search.</div>
+    <div class="empty">
+      No resources match those filters. Try a broader search.
+    </div>
   `;
-}
 
-/* Render admin resource table */
-function renderAdmin() {
-  $("adminRows").innerHTML = resources.map(resource => `
-    <tr>
-      <td>
-        ${escapeHTML(resource.title)}<br>
-        <span class="muted">${escapeHTML(resource.exam)}</span>
-      </td>
-      <td>${escapeHTML(resource.type)}</td>
-      <td>${escapeHTML(resource.access)}</td>
-      <td>
-        <button
-          class="btn outline small"
-          type="button"
-          onclick="toggleAccess(${resource.id})"
-        >
-          Change Access
-        </button>
-
-        <button
-          class="btn outline small"
-          type="button"
-          onclick="removeResource(${resource.id})"
-        >
-          Remove
-        </button>
-      </td>
-    </tr>
-  `).join("");
-}
-
-/* Open free resources or show premium status */
-function openResource(id) {
-  const resource = resources.find(item => item.id === id);
-
-  if (!resource) return;
-
-  if (resource.access === "Premium") {
-    toast("Premium checkout is not connected yet.");
-    return;
+  if (window.lucide) {
+    window.lucide.createIcons();
   }
 
-  if (resource.url) {
-    const link = document.createElement("a");
-    link.href = resource.url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.click();
-  } else {
-    toast("Add a hosted file URL to enable access.");
-  }
-}
+  grid.querySelectorAll("[data-resource]").forEach(button => {
+    button.addEventListener("click", () => {
+      const resource = resources.find(
+        item => item.id === Number(button.dataset.resource)
+      );
 
-/* Demo-only access change */
-function toggleAccess(id) {
-  const resource = resources.find(item => item.id === id);
-
-  if (!resource) return;
-
-  resource.access =
-    resource.access === "Free" ? "Premium" : "Free";
-
-  if (resource.access === "Free") {
-    resource.price = 0;
-  } else if (!resource.price) {
-    resource.price = 99;
-  }
-
-  renderResources();
-  renderAdmin();
-  toast("Access updated in this demo.");
-}
-
-/* Demo-only resource removal */
-function removeResource(id) {
-  const resource = resources.find(item => item.id === id);
-
-  if (!resource) return;
-
-  const confirmed = window.confirm(
-    `Remove "${resource.title}" from this demo library?`
-  );
-
-  if (!confirmed) return;
-
-  resources = resources.filter(item => item.id !== id);
-
-  renderResources();
-  renderAdmin();
-  toast("Resource removed from this demo.");
-}
-
-/* Switch dashboard panels */
-function showPanel(panelId) {
-  document.querySelectorAll(".adminpanel").forEach(panel => {
-    panel.classList.toggle("active", panel.id === panelId);
-  });
-}
-
-/* Open and close login modal */
-$("adminOpen").onclick = () => {
-  $("loginModal").classList.add("show");
-  $("adminUser").focus();
-};
-
-$("loginClose").onclick = () => {
-  $("loginModal").classList.remove("show");
-};
-
-$("loginModal").addEventListener("click", event => {
-  if (event.target === $("loginModal")) {
-    $("loginModal").classList.remove("show");
-  }
-});
-
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape") {
-    $("loginModal").classList.remove("show");
-  }
-});
-
-/*
-  DEMO LOGIN ONLY.
-  Never use client-side credentials for a live website.
-*/
-$("loginForm").onsubmit = event => {
-  event.preventDefault();
-
-  if (
-    $("adminUser").value === "admin" &&
-    $("adminPass").value === "Demo@12345"
-  ) {
-    $("loginModal").classList.remove("show");
-    $("publicSite").classList.add("hidden");
-    document.querySelector(".footer").classList.add("hidden");
-    $("adminArea").classList.add("show");
-
-    renderAdmin();
-    window.scrollTo(0, 0);
-    toast("Demo admin opened.");
-  } else {
-    toast("Incorrect demo credentials.");
-  }
-};
-
-/* Log out of demo dashboard */
-$("adminLogout").onclick = () => {
-  $("adminArea").classList.remove("show");
-  $("publicSite").classList.remove("hidden");
-  document.querySelector(".footer").classList.remove("hidden");
-
-  $("adminUser").value = "";
-  $("adminPass").value = "";
-
-  window.scrollTo(0, 0);
-};
-
-/* Admin navigation */
-document.querySelectorAll("[data-panel]").forEach(button => {
-  button.onclick = () => showPanel(button.dataset.panel);
-});
-
-/* Add a resource to the in-memory demo library */
-$("uploadForm").onsubmit = event => {
-  event.preventDefault();
-
-  const type = $("resType").value;
-  const access = $("resAccess").value;
-  const file = $("resFile").files[0];
-
-  const resourceUrl = $("resLink").value.trim();
-
-  if (resourceUrl) {
-    try {
-      const parsedUrl = new URL(resourceUrl);
-
-      if (!["http:", "https:"].includes(parsedUrl.protocol)) {
-        toast("Please enter a valid HTTP or HTTPS URL.");
-        return;
+      if (resource.url) {
+        window.open(resource.url, "_blank", "noopener,noreferrer");
+      } else {
+        showToast(
+          "Sample catalogue item. Add your verified PDF, lesson or practice-set URL to publish this resource."
+        );
       }
-    } catch {
-      toast("Please enter a valid resource URL.");
-      return;
-    }
-  }
+    });
+  });
+}
 
-  resources.unshift({
-    id: nextId++,
-    title: $("resTitle").value.trim(),
-    type,
-    exam: $("resExam").value,
-    access,
-    price: access === "Free"
-      ? 0
-      : Number($("resPrice").value || 0),
-    demo: $("resDemo").value,
-    desc: $("resDesc").value.trim(),
-    url: resourceUrl,
-    fileName: file ? file.name : ""
+/* Search and filter events. */
+document.querySelector("#search").addEventListener("input", renderResources);
+document.querySelector("#examFilter").addEventListener("change", renderResources);
+document.querySelector("#typeFilter").addEventListener("change", renderResources);
+
+document.querySelectorAll("[data-exam]").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector("#examFilter").value = link.dataset.exam;
+    renderResources();
+  });
+});
+
+/* Demo quiz data.
+   Check all answers against authoritative exam material before launch. */
+const quiz = [
+  {
+    q: "Which river is also known as the Chandrabhaga in Himachal Pradesh?",
+    a: ["Beas", "Chenab", "Ravi", "Sutlej"],
+    correct: 1,
+    why: "The Chenab is formed by the confluence of the Chandra and Bhaga rivers near Tandi."
+  },
+  {
+    q: "Which of these is a major pass in Himachal Pradesh?",
+    a: ["Rohtang Pass", "Nathu La", "Zoji La only in Ladakh", "Bum La"],
+    correct: 0,
+    why: "Rohtang Pass connects the Kullu Valley with the Lahaul-Spiti region. Check seasonal access and current official advisories before travel."
+  },
+  {
+    q: "What is a useful first step when revising a topic?",
+    a: [
+      "Read without a goal",
+      "Memorise every line",
+      "Identify key concepts and test recall",
+      "Skip practice questions"
+    ],
+    correct: 2,
+    why: "Set a focused goal, understand key concepts, and use active recall to check what you remember."
+  }
+];
+
+let questionIndex = 0;
+let score = 0;
+let answered = false;
+
+const questionElement = document.querySelector("#question");
+const answersElement = document.querySelector("#answers");
+const nextButton = document.querySelector("#nextQuestion");
+const resultElement = document.querySelector("#quizResult");
+
+/* Show the current quiz question. */
+function loadQuiz() {
+  answered = false;
+
+  const current = quiz[questionIndex];
+
+  document.querySelector("#quizCount").textContent =
+    `Question ${questionIndex + 1} of ${quiz.length}`;
+
+  document.querySelector("#progress").style.width =
+    `${questionIndex / quiz.length * 100}%`;
+
+  questionElement.textContent = current.q;
+
+  answersElement.innerHTML = current.a.map((answer, index) => `
+    <button type="button" class="answer" data-answer="${index}">
+      <b>${String.fromCharCode(65 + index)}.</b> ${esc(answer)}
+    </button>
+  `).join("");
+
+  resultElement.innerHTML = "";
+  nextButton.disabled = true;
+
+  nextButton.textContent =
+    questionIndex === quiz.length - 1
+      ? "See result →"
+      : "Next question →";
+
+  document.querySelector("#scoreText").textContent =
+    `Score: ${score} / ${questionIndex}`;
+
+  answersElement.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", () => {
+      chooseAnswer(Number(button.dataset.answer));
+    });
+  });
+}
+
+/* Check an answer and show the explanation. */
+function chooseAnswer(selectedIndex) {
+  if (answered) return;
+
+  answered = true;
+
+  const current = quiz[questionIndex];
+
+  answersElement.querySelectorAll("button").forEach((button, index) => {
+    button.disabled = true;
+
+    if (index === current.correct) {
+      button.classList.add("correct");
+    }
+
+    if (index === selectedIndex && index !== current.correct) {
+      button.classList.add("wrong");
+    }
   });
 
-  renderResources();
-  renderAdmin();
+  if (selectedIndex === current.correct) {
+    score++;
+  }
 
-  event.target.reset();
-  $("resPrice").value = "0";
+  resultElement.innerHTML = `
+    <div class="quiz-result">
+      <strong>${selectedIndex === current.correct ? "Correct." : "Not quite."}</strong>
+      ${esc(current.why)}
+    </div>
+  `;
 
-  showPanel("libraryPanel");
+  nextButton.disabled = false;
 
-  toast("Resource added to this demo only.");
-};
+  document.querySelector("#progress").style.width =
+    `${(questionIndex + 1) / quiz.length * 100}%`;
 
-/* Resource search and filters */
-[
-  "searchResource",
-  "typeFilter",
-  "accessFilter"
-].forEach(id => {
-  $(id).addEventListener(
-    id === "searchResource" ? "input" : "change",
-    renderResources
-  );
+  document.querySelector("#scoreText").textContent =
+    `Score: ${score} / ${questionIndex + 1}`;
+}
+
+/* Move through the quiz and allow a restart. */
+nextButton.addEventListener("click", () => {
+  if (!answered) return;
+
+  if (questionIndex < quiz.length - 1) {
+    questionIndex++;
+    loadQuiz();
+  } else {
+    questionElement.textContent =
+      `You scored ${score} out of ${quiz.length}.`;
+
+    answersElement.innerHTML = "";
+
+    resultElement.innerHTML = `
+      <div class="quiz-result">
+        This is a short demo quiz, not an official assessment.
+        Review explanations and practise with verified exam material.
+      </div>
+    `;
+
+    nextButton.textContent = "Try again ↻";
+    nextButton.disabled = false;
+
+    document.querySelector("#progress").style.width = "100%";
+
+    nextButton.onclick = () => {
+      questionIndex = 0;
+      score = 0;
+      nextButton.onclick = null;
+      loadQuiz();
+    };
+  }
 });
 
-/* Demo quiz interaction */
-document.querySelectorAll("[data-answer]").forEach(button => {
-  button.onclick = () => {
-    const correct = button.dataset.answer === "b";
+/* Show a small notification. */
+function showToast(message) {
+  const toast = document.querySelector("#toast");
 
-    $("quizResult").classList.remove("hidden");
+  toast.textContent = message;
+  toast.classList.add("show");
 
-    $("quizResult").innerHTML = correct
-      ? "<strong>Correct!</strong> Reo Purgyil is the expected answer."
-      : "<strong>Try again.</strong> The expected answer is Reo Purgyil.";
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3600);
+}
 
-    document.querySelectorAll("[data-answer]").forEach(option => {
-      option.disabled = true;
-    });
-  };
+/* Mobile navigation toggle. */
+document.querySelector("#menuToggle").addEventListener("click", () => {
+  const panel = document.querySelector("#mobilePanel");
+  const button = document.querySelector("#menuToggle");
+  const isOpen = panel.classList.toggle("open");
+
+  button.setAttribute("aria-expanded", String(isOpen));
 });
 
-/* Initial page render */
+document.querySelectorAll("#mobilePanel a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector("#mobilePanel").classList.remove("open");
+    document.querySelector("#menuToggle").setAttribute("aria-expanded", "false");
+  });
+});
+
+/* Respect reduced-motion settings and initialise the page. */
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.documentElement.classList.add("no-motion");
+}
+
+document.querySelector("#year").textContent = new Date().getFullYear();
+
 renderResources();
+loadQuiz();
+
+if (window.lucide) {
+  window.lucide.createIcons();
+}
 </script>
 
 </body>
